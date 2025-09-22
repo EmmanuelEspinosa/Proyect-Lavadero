@@ -1,16 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.idraGroup.lavadero.view;
 
 /**
  *
- * @author emmae
+ * @author idra17
  */
-public class ClienteView extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ClienteView.class.getName());
+public class ClienteView extends javax.swing.JPanel {
 
     /**
      * Creates new form ClienteView
@@ -79,8 +77,6 @@ public class ClienteView extends javax.swing.JFrame {
         clienteCrearTitulo3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         clienteTabbedPanel.setBackground(new java.awt.Color(255, 255, 255));
         clienteTabbedPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -383,8 +379,8 @@ public class ClienteView extends javax.swing.JFrame {
 
         clienteTabbedPanel.addTab("LISTAR", clienteListarPanel);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -399,21 +395,19 @@ public class ClienteView extends javax.swing.JFrame {
                 .addComponent(clienteTabbedPanel)
                 .addContainerGap())
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelefonoActionPerformed
+    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputTelefonoActionPerformed
+    }//GEN-LAST:event_inputNombreActionPerformed
 
     private void inputDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDniActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDniActionPerformed
 
-    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
+    private void inputTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNombreActionPerformed
+    }//GEN-LAST:event_inputTelefonoActionPerformed
 
     private void inputNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombre1ActionPerformed
         // TODO add your handling code here:
@@ -431,30 +425,6 @@ public class ClienteView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNombre2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ClienteView().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;

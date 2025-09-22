@@ -15,9 +15,17 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        ReservaView reservaPanel = new ReservaView();
+        MainTabbedPane.addTab("reserva",reservaPanel);
+        ClienteView clientePanel = new ClienteView();
+        MainTabbedPane.addTab("cliente",clientePanel);
         AutoView autoPanel = new AutoView();
-       
         MainTabbedPane.addTab("auto",autoPanel);
+        
+
+        
+
+        
    
     }
 
@@ -38,9 +46,7 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(MainTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(MainTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
