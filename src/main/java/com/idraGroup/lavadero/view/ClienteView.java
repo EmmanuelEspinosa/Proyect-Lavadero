@@ -394,7 +394,10 @@ public class ClienteView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(clienteTabbedPanel)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clienteTabbedPanel)
+                .addContainerGap())
         );
 
         pack();
