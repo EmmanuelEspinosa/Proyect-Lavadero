@@ -4,6 +4,10 @@
  */
 package com.idraGroup.lavadero.view;
 
+
+import com.idraGroup.lavadero.view.Auto.AutoView;
+import com.idraGroup.lavadero.view.cliente.ClienteView;
+
 /**
  *
  * @author LoloColombo
@@ -13,14 +17,14 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Main() { 
         initComponents();
         ReservaView reservaPanel = new ReservaView();
-        MainTabbedPane.addTab("reserva",reservaPanel);
+        MainTabbedPane.addTab("RESERVA",reservaPanel);
         ClienteView clientePanel = new ClienteView();
-        MainTabbedPane.addTab("cliente",clientePanel);
+        MainTabbedPane.addTab("CLIENTE",clientePanel);
         AutoView autoPanel = new AutoView();
-        MainTabbedPane.addTab("auto",autoPanel);
+        MainTabbedPane.addTab("AUTO",autoPanel);
         
 
         
@@ -38,9 +42,10 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MainTabbedPane = new javax.swing.JTabbedPane();
+        MainTabbedPane = new com.idraGroup.lavadero.view.ravenTabbed.TabbedPaneCustom();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,9 +55,7 @@ public class Main extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(MainTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(MainTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -94,6 +97,6 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane MainTabbedPane;
+    private com.idraGroup.lavadero.view.ravenTabbed.TabbedPaneCustom MainTabbedPane;
     // End of variables declaration//GEN-END:variables
 }
