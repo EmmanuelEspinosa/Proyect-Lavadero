@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.idraGroup.lavadero.view.Auto;
+package com.idraGroup.lavadero.view.reserva;
 
 /**
  *
  * @author LoloColombo
  */
-public class PanelEliminarAuto extends javax.swing.JPanel {
+public class PanelEliminarReserva extends javax.swing.JPanel {
 
     /**
-     * Creates new form PanelEliminarAuto
+     * Creates new form PanelEliminarReserva
      */
-    public PanelEliminarAuto() {
+    public PanelEliminarReserva() {
         initComponents();
     }
 
@@ -40,8 +40,8 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         bgClienteCrear2.setForeground(new java.awt.Color(255, 255, 255));
         bgClienteCrear2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAuto - copia.png"))); // NOI18N
-        bgClienteCrear2.add(clienteSiluetaImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 250, 430));
+        clienteSiluetaImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
+        bgClienteCrear2.add(clienteSiluetaImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 200, 430));
 
         CiudadImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
         bgClienteCrear2.add(CiudadImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
@@ -50,16 +50,16 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         bgClienteCrear2.add(LogoImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 80, 40));
 
         clienteCrearTitulo2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo2.setText("ELIMINAR AUTO");
+        clienteCrearTitulo2.setText("ELIMINAR RESERVA");
         bgClienteCrear2.add(clienteCrearTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 280, 30));
 
         labelNombre2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelNombre2.setText("PATENTE");
+        labelNombre2.setText("ID RESERVA");
         bgClienteCrear2.add(labelNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         inputNombre2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         inputNombre2.setForeground(new java.awt.Color(204, 204, 204));
-        inputNombre2.setText("Ingrese la patente del auto a eliminar.");
+        inputNombre2.setText("Ingrese el ID de la reserva a eliminar");
         inputNombre2.setBorder(null);
         inputNombre2.setCaretColor(new java.awt.Color(204, 204, 204));
         inputNombre2.addActionListener(new java.awt.event.ActionListener() {

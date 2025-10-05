@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.idraGroup.lavadero.view.Auto;
+package com.idraGroup.lavadero.view.reserva;
 
 /**
  *
  * @author LoloColombo
  */
-public class PanelListarAuto extends javax.swing.JPanel {
+public class PanelListarReserva extends javax.swing.JPanel {
 
     /**
-     * Creates new form PanelListarAuto
+     * Creates new form PanelListarReserva
      */
-    public PanelListarAuto() {
+    public PanelListarReserva() {
         initComponents();
     }
 
@@ -38,17 +38,17 @@ public class PanelListarAuto extends javax.swing.JPanel {
         bgClienteCrear3.setForeground(new java.awt.Color(255, 255, 255));
         bgClienteCrear3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAuto - copia.png"))); // NOI18N
-        bgClienteCrear3.add(clienteSiluetaImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 250, 430));
+        clienteSiluetaImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
+        bgClienteCrear3.add(clienteSiluetaImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 200, 430));
 
         CiudadImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        bgClienteCrear3.add(CiudadImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        bgClienteCrear3.add(CiudadImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 240, 430));
 
         LogoImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
         bgClienteCrear3.add(LogoImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
         clienteCrearTitulo3.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo3.setText("LISTA DE AUTOS");
+        clienteCrearTitulo3.setText("LISTA DE RESERVAS");
         bgClienteCrear3.add(clienteCrearTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -56,11 +56,11 @@ public class PanelListarAuto extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "PATENTE", "TIPO"
+                "ID", "PATENTE", "DNI", "TURNO", "TIPO LAVADO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -69,7 +69,7 @@ public class PanelListarAuto extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        bgClienteCrear3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 470, 370));
+        bgClienteCrear3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

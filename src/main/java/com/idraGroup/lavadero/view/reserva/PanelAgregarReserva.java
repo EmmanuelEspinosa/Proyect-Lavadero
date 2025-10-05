@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.idraGroup.lavadero.view.Auto;
+package com.idraGroup.lavadero.view.reserva;
 
 /**
  *
  * @author LoloColombo
  */
-public class PanelActualizarAuto extends javax.swing.JPanel {
+public class PanelAgregarReserva extends javax.swing.JPanel {
 
     /**
-     * Creates new form PanelActualizarAuto
+     * Creates new form PanelAgregarReserva
      */
-    public PanelActualizarAuto() {
+    public PanelAgregarReserva() {
         initComponents();
         ConfigurarGrupoBotones();
     }
@@ -27,7 +27,7 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        GroupTipoAuto = new javax.swing.ButtonGroup();
+        GroupTipoLavado = new javax.swing.ButtonGroup();
         bgClienteCrear = new javax.swing.JPanel();
         clienteSiluetaImg = new javax.swing.JLabel();
         CiudadImg = new javax.swing.JLabel();
@@ -38,20 +38,22 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         labelDni = new javax.swing.JLabel();
         inputDni = new javax.swing.JTextField();
         botonGuardarCliente = new javax.swing.JButton();
-        bCamioneta = new javax.swing.JRadioButton();
-        bSedan = new javax.swing.JRadioButton();
-        bSUV = new javax.swing.JRadioButton();
-        bFurgoneta = new javax.swing.JRadioButton();
+        bPremium = new javax.swing.JRadioButton();
+        bStandard = new javax.swing.JRadioButton();
+        bDeluxe = new javax.swing.JRadioButton();
         labelDni1 = new javax.swing.JLabel();
         inputDni1 = new javax.swing.JTextField();
         separatorNombre1 = new javax.swing.JSeparator();
+        labelDni2 = new javax.swing.JLabel();
+        inputDni2 = new javax.swing.JTextField();
+        separatorNombre2 = new javax.swing.JSeparator();
 
         bgClienteCrear.setBackground(new java.awt.Color(255, 255, 255));
         bgClienteCrear.setForeground(new java.awt.Color(255, 255, 255));
         bgClienteCrear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAuto - copia.png"))); // NOI18N
-        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 250, 430));
+        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
+        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 200, 430));
 
         CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
         bgClienteCrear.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
@@ -60,18 +62,18 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         bgClienteCrear.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 80, 40));
 
         clienteCrearTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo.setText("ACTUALIZAR AUTO");
+        clienteCrearTitulo.setText("REGISTRAR RESERVA");
         bgClienteCrear.add(clienteCrearTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 280, 30));
 
         labelNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelNombre.setText("NUEVO TIPO");
-        bgClienteCrear.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        labelNombre.setText("TIPO LAVADO");
+        bgClienteCrear.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 340, 10));
+        bgClienteCrear.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 10));
 
         labelDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni.setText("PATENTE ACTUAL");
+        labelDni.setText("DNI");
         bgClienteCrear.add(labelDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         inputDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
@@ -84,7 +86,7 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
                 inputDniActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 390, -1));
+        bgClienteCrear.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, -1));
 
         botonGuardarCliente.setBackground(new java.awt.Color(0, 134, 190));
         botonGuardarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
@@ -93,36 +95,28 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bgClienteCrear.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
-        bCamioneta.setText("Camioneta");
-        bCamioneta.addActionListener(new java.awt.event.ActionListener() {
+        bPremium.setText("PREMIUM");
+        bPremium.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCamionetaActionPerformed(evt);
+                bPremiumActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(bCamioneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        bgClienteCrear.add(bPremium, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
-        bSedan.setText("Sedan");
-        bSedan.addActionListener(new java.awt.event.ActionListener() {
+        bStandard.setText("STANDARD");
+        bgClienteCrear.add(bStandard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        bDeluxe.setText("DELUXE");
+        bDeluxe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bSedanActionPerformed(evt);
+                bDeluxeActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(bSedan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
-
-        bSUV.setText("SUV");
-        bgClienteCrear.add(bSUV, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
-
-        bFurgoneta.setText("Furgoneta");
-        bFurgoneta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bFurgonetaActionPerformed(evt);
-            }
-        });
-        bgClienteCrear.add(bFurgoneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        bgClienteCrear.add(bDeluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         labelDni1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni1.setText("NUEVA PATENTE");
-        bgClienteCrear.add(labelDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        labelDni1.setText("TURNO");
+        bgClienteCrear.add(labelDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         inputDni1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         inputDni1.setForeground(new java.awt.Color(204, 204, 204));
@@ -134,16 +128,35 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
                 inputDni1ActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 390, -1));
+        bgClienteCrear.add(inputDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
 
         separatorNombre1.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 340, 10));
+        bgClienteCrear.add(separatorNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 10));
+
+        labelDni2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        labelDni2.setText("PATENTE");
+        bgClienteCrear.add(labelDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        inputDni2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputDni2.setForeground(new java.awt.Color(204, 204, 204));
+        inputDni2.setText("Ingrese patente");
+        inputDni2.setBorder(null);
+        inputDni2.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputDni2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputDni2ActionPerformed(evt);
+            }
+        });
+        bgClienteCrear.add(inputDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 390, -1));
+
+        separatorNombre2.setForeground(new java.awt.Color(0, 0, 0));
+        bgClienteCrear.add(separatorNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bgClienteCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,48 +170,49 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDniActionPerformed
 
-    private void bCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCamionetaActionPerformed
+    private void bPremiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPremiumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCamionetaActionPerformed
+    }//GEN-LAST:event_bPremiumActionPerformed
 
-    private void bFurgonetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFurgonetaActionPerformed
+    private void bDeluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeluxeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bFurgonetaActionPerformed
+    }//GEN-LAST:event_bDeluxeActionPerformed
 
     private void inputDni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDni1ActionPerformed
 
-    private void bSedanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSedanActionPerformed
+    private void inputDni2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bSedanActionPerformed
+    }//GEN-LAST:event_inputDni2ActionPerformed
     private void ConfigurarGrupoBotones(){
         
-        GroupTipoAuto.add(bCamioneta);
-        GroupTipoAuto.add(bSedan);
-        GroupTipoAuto.add(bSUV);
-        GroupTipoAuto.add(bFurgoneta);
+        GroupTipoLavado.add(bDeluxe);
+        GroupTipoLavado.add(bPremium);
+        GroupTipoLavado.add(bStandard);
 
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
-    private javax.swing.ButtonGroup GroupTipoAuto;
+    private javax.swing.ButtonGroup GroupTipoLavado;
     private javax.swing.JLabel LogoImg;
-    private javax.swing.JRadioButton bCamioneta;
-    private javax.swing.JRadioButton bFurgoneta;
-    private javax.swing.JRadioButton bSUV;
-    private javax.swing.JRadioButton bSedan;
+    private javax.swing.JRadioButton bDeluxe;
+    private javax.swing.JRadioButton bPremium;
+    private javax.swing.JRadioButton bStandard;
     private javax.swing.JPanel bgClienteCrear;
     private javax.swing.JButton botonGuardarCliente;
     private javax.swing.JLabel clienteCrearTitulo;
     private javax.swing.JLabel clienteSiluetaImg;
     private javax.swing.JTextField inputDni;
     private javax.swing.JTextField inputDni1;
+    private javax.swing.JTextField inputDni2;
     private javax.swing.JLabel labelDni;
     private javax.swing.JLabel labelDni1;
+    private javax.swing.JLabel labelDni2;
     private javax.swing.JLabel labelNombre;
     private javax.swing.JSeparator separatorNombre;
     private javax.swing.JSeparator separatorNombre1;
+    private javax.swing.JSeparator separatorNombre2;
     // End of variables declaration//GEN-END:variables
 }

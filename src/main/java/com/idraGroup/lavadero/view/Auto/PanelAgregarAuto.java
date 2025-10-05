@@ -47,8 +47,8 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         bgClienteCrear.setForeground(new java.awt.Color(255, 255, 255));
         bgClienteCrear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/clienteSilueta.png"))); // NOI18N
-        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAuto - copia.png"))); // NOI18N
+        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 250, 430));
 
         CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
         bgClienteCrear.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));

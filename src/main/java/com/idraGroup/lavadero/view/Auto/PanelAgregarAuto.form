@@ -50,12 +50,12 @@
         <Component class="javax.swing.JLabel" name="clienteSiluetaImg">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/clienteSilueta.png"/>
+              <Image iconType="3" name="/imagenes/fotoAuto - copia.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="490" y="0" width="280" height="430"/>
+              <AbsoluteConstraints x="500" y="0" width="250" height="430"/>
             </Constraint>
           </Constraints>
         </Component>

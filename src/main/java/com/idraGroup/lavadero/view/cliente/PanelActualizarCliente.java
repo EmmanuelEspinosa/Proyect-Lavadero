@@ -50,7 +50,7 @@ public class PanelActualizarCliente extends javax.swing.JPanel {
         bgClienteCrear1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         clienteSiluetaImg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/clienteSilueta.png"))); // NOI18N
-        bgClienteCrear1.add(clienteSiluetaImg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 290, 250));
+        bgClienteCrear1.add(clienteSiluetaImg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 300, 430));
 
         CiudadImg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
         bgClienteCrear1.add(CiudadImg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 300, 430));
@@ -149,9 +149,7 @@ public class PanelActualizarCliente extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bgClienteCrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(bgClienteCrear1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -20,7 +20,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="bgClienteCrear" alignment="0" max="32767" attributes="0"/>
+          <Component id="bgClienteCrear" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -50,12 +50,12 @@
         <Component class="javax.swing.JLabel" name="clienteSiluetaImg">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/clienteSilueta.png"/>
+              <Image iconType="3" name="/imagenes/fotoAuto - copia.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="490" y="0" width="280" height="430"/>
+              <AbsoluteConstraints x="500" y="0" width="250" height="430"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -198,6 +198,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Sedan"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSedanActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="110" y="280" width="-1" height="-1"/>
