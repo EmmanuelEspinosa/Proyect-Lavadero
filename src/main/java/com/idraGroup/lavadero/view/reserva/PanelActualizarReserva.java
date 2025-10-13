@@ -28,75 +28,75 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
     private void initComponents() {
 
         GroupTipoLavado = new javax.swing.ButtonGroup();
-        bgClienteCrear = new javax.swing.JPanel();
-        clienteSiluetaImg = new javax.swing.JLabel();
+        pnlActualizarReserva = new javax.swing.JPanel();
+        reservaSiluetaImg = new javax.swing.JLabel();
         CiudadImg = new javax.swing.JLabel();
         LogoImg = new javax.swing.JLabel();
-        clienteCrearTitulo = new javax.swing.JLabel();
-        labelNombre = new javax.swing.JLabel();
-        separatorNombre = new javax.swing.JSeparator();
-        labelDni = new javax.swing.JLabel();
-        inputDni = new javax.swing.JTextField();
-        botonGuardarCliente = new javax.swing.JButton();
+        lblTitulo = new javax.swing.JLabel();
+        lblNuevoLavado = new javax.swing.JLabel();
+        separatorIDReserva = new javax.swing.JSeparator();
+        lblReservaId = new javax.swing.JLabel();
+        inputReservaId = new javax.swing.JTextField();
+        botonActualizarReserva = new javax.swing.JButton();
         bPremium = new javax.swing.JRadioButton();
         bStandard = new javax.swing.JRadioButton();
         bDeluxe = new javax.swing.JRadioButton();
-        labelDni1 = new javax.swing.JLabel();
-        inputDni1 = new javax.swing.JTextField();
-        separatorNombre1 = new javax.swing.JSeparator();
-        labelDni2 = new javax.swing.JLabel();
-        inputDni2 = new javax.swing.JTextField();
-        separatorNombre2 = new javax.swing.JSeparator();
-        labelDni3 = new javax.swing.JLabel();
-        inputDni3 = new javax.swing.JTextField();
-        separatorNombre3 = new javax.swing.JSeparator();
+        lblNuevoTurno = new javax.swing.JLabel();
+        inputNuevoTurno = new javax.swing.JTextField();
+        separatorTurno = new javax.swing.JSeparator();
+        lblNuevaPatente = new javax.swing.JLabel();
+        inputNuevaPatente = new javax.swing.JTextField();
+        separatorPatente = new javax.swing.JSeparator();
+        labelNuevoDni = new javax.swing.JLabel();
+        inputNuevoDni = new javax.swing.JTextField();
+        separatorDni = new javax.swing.JSeparator();
 
-        bgClienteCrear.setBackground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear.setForeground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlActualizarReserva.setBackground(new java.awt.Color(255, 255, 255));
+        pnlActualizarReserva.setForeground(new java.awt.Color(255, 255, 255));
+        pnlActualizarReserva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
-        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 200, 430));
+        reservaSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
+        pnlActualizarReserva.add(reservaSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 200, 430));
 
         CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        bgClienteCrear.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        pnlActualizarReserva.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
         LogoImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
-        bgClienteCrear.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 40));
+        pnlActualizarReserva.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 40));
 
-        clienteCrearTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo.setText("ACTUALIZAR RESERVA");
-        bgClienteCrear.add(clienteCrearTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 280, 30));
+        lblTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblTitulo.setText("ACTUALIZAR RESERVA");
+        pnlActualizarReserva.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 280, 30));
 
-        labelNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelNombre.setText("NUEVO TIPO LAVADO");
-        bgClienteCrear.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        lblNuevoLavado.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblNuevoLavado.setText("NUEVO TIPO LAVADO");
+        pnlActualizarReserva.add(lblNuevoLavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
-        separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 340, 10));
+        separatorIDReserva.setForeground(new java.awt.Color(0, 0, 0));
+        pnlActualizarReserva.add(separatorIDReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 340, 10));
 
-        labelDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni.setText("ID DE RESERVA");
-        bgClienteCrear.add(labelDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        lblReservaId.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblReservaId.setText("ID DE RESERVA");
+        pnlActualizarReserva.add(lblReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        inputDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni.setText("Ingrese el ID de la reserva a actualizar");
-        inputDni.setBorder(null);
-        inputDni.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni.addActionListener(new java.awt.event.ActionListener() {
+        inputReservaId.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputReservaId.setForeground(new java.awt.Color(204, 204, 204));
+        inputReservaId.setText("Ingrese el ID de la reserva a actualizar");
+        inputReservaId.setBorder(null);
+        inputReservaId.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputReservaId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDniActionPerformed(evt);
+                inputReservaIdActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 390, -1));
+        pnlActualizarReserva.add(inputReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 390, -1));
 
-        botonGuardarCliente.setBackground(new java.awt.Color(0, 134, 190));
-        botonGuardarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
-        botonGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        botonGuardarCliente.setText("Guardar");
-        botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bgClienteCrear.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+        botonActualizarReserva.setBackground(new java.awt.Color(0, 134, 190));
+        botonActualizarReserva.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
+        botonActualizarReserva.setForeground(new java.awt.Color(255, 255, 255));
+        botonActualizarReserva.setText("Guardar");
+        botonActualizarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlActualizarReserva.add(botonActualizarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         bPremium.setText("PREMIUM");
         bPremium.addActionListener(new java.awt.event.ActionListener() {
@@ -104,10 +104,10 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
                 bPremiumActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(bPremium, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        pnlActualizarReserva.add(bPremium, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
         bStandard.setText("STANDARD");
-        bgClienteCrear.add(bStandard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        pnlActualizarReserva.add(bStandard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
         bDeluxe.setText("DELUXE");
         bDeluxe.addActionListener(new java.awt.event.ActionListener() {
@@ -115,80 +115,80 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
                 bDeluxeActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(bDeluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
+        pnlActualizarReserva.add(bDeluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
-        labelDni1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni1.setText("NUEVO TURNO");
-        bgClienteCrear.add(labelDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        lblNuevoTurno.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblNuevoTurno.setText("NUEVO TURNO");
+        pnlActualizarReserva.add(lblNuevoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        inputDni1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni1.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni1.setText("Ingrese patente");
-        inputDni1.setBorder(null);
-        inputDni1.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni1.addActionListener(new java.awt.event.ActionListener() {
+        inputNuevoTurno.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputNuevoTurno.setForeground(new java.awt.Color(204, 204, 204));
+        inputNuevoTurno.setText("Ingrese patente");
+        inputNuevoTurno.setBorder(null);
+        inputNuevoTurno.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputNuevoTurno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDni1ActionPerformed(evt);
+                inputNuevoTurnoActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 390, -1));
+        pnlActualizarReserva.add(inputNuevoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 390, -1));
 
-        separatorNombre1.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 340, 10));
+        separatorTurno.setForeground(new java.awt.Color(0, 0, 0));
+        pnlActualizarReserva.add(separatorTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 340, 10));
 
-        labelDni2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni2.setText("NUEVA PATENTE");
-        bgClienteCrear.add(labelDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        lblNuevaPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblNuevaPatente.setText("NUEVA PATENTE");
+        pnlActualizarReserva.add(lblNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        inputDni2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni2.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni2.setText("Ingrese patente");
-        inputDni2.setBorder(null);
-        inputDni2.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni2.addActionListener(new java.awt.event.ActionListener() {
+        inputNuevaPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputNuevaPatente.setForeground(new java.awt.Color(204, 204, 204));
+        inputNuevaPatente.setText("Ingrese patente");
+        inputNuevaPatente.setBorder(null);
+        inputNuevaPatente.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputNuevaPatente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDni2ActionPerformed(evt);
+                inputNuevaPatenteActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 390, -1));
+        pnlActualizarReserva.add(inputNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 390, -1));
 
-        separatorNombre2.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 340, 10));
+        separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
+        pnlActualizarReserva.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 340, 10));
 
-        labelDni3.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni3.setText("NUEVO DNI");
-        bgClienteCrear.add(labelDni3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        labelNuevoDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        labelNuevoDni.setText("NUEVO DNI");
+        pnlActualizarReserva.add(labelNuevoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        inputDni3.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni3.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni3.setText("Ingrese patente del auto a actualizar");
-        inputDni3.setBorder(null);
-        inputDni3.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni3.addActionListener(new java.awt.event.ActionListener() {
+        inputNuevoDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputNuevoDni.setForeground(new java.awt.Color(204, 204, 204));
+        inputNuevoDni.setText("Ingrese patente del auto a actualizar");
+        inputNuevoDni.setBorder(null);
+        inputNuevoDni.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputNuevoDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDni3ActionPerformed(evt);
+                inputNuevoDniActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
+        pnlActualizarReserva.add(inputNuevoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
 
-        separatorNombre3.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, 10));
+        separatorDni.setForeground(new java.awt.Color(0, 0, 0));
+        pnlActualizarReserva.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlActualizarReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlActualizarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDniActionPerformed
+    private void inputReservaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputReservaIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDniActionPerformed
+    }//GEN-LAST:event_inputReservaIdActionPerformed
 
     private void bPremiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPremiumActionPerformed
         // TODO add your handling code here:
@@ -198,17 +198,17 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_bDeluxeActionPerformed
 
-    private void inputDni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni1ActionPerformed
+    private void inputNuevoTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevoTurnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDni1ActionPerformed
+    }//GEN-LAST:event_inputNuevoTurnoActionPerformed
 
-    private void inputDni2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni2ActionPerformed
+    private void inputNuevaPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevaPatenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDni2ActionPerformed
+    }//GEN-LAST:event_inputNuevaPatenteActionPerformed
 
-    private void inputDni3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni3ActionPerformed
+    private void inputNuevoDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevoDniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDni3ActionPerformed
+    }//GEN-LAST:event_inputNuevoDniActionPerformed
     private void ConfigurarGrupoBotones(){
         
         GroupTipoLavado.add(bDeluxe);
@@ -224,22 +224,22 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
     private javax.swing.JRadioButton bDeluxe;
     private javax.swing.JRadioButton bPremium;
     private javax.swing.JRadioButton bStandard;
-    private javax.swing.JPanel bgClienteCrear;
-    private javax.swing.JButton botonGuardarCliente;
-    private javax.swing.JLabel clienteCrearTitulo;
-    private javax.swing.JLabel clienteSiluetaImg;
-    private javax.swing.JTextField inputDni;
-    private javax.swing.JTextField inputDni1;
-    private javax.swing.JTextField inputDni2;
-    private javax.swing.JTextField inputDni3;
-    private javax.swing.JLabel labelDni;
-    private javax.swing.JLabel labelDni1;
-    private javax.swing.JLabel labelDni2;
-    private javax.swing.JLabel labelDni3;
-    private javax.swing.JLabel labelNombre;
-    private javax.swing.JSeparator separatorNombre;
-    private javax.swing.JSeparator separatorNombre1;
-    private javax.swing.JSeparator separatorNombre2;
-    private javax.swing.JSeparator separatorNombre3;
+    private javax.swing.JButton botonActualizarReserva;
+    private javax.swing.JTextField inputNuevaPatente;
+    private javax.swing.JTextField inputNuevoDni;
+    private javax.swing.JTextField inputNuevoTurno;
+    private javax.swing.JTextField inputReservaId;
+    private javax.swing.JLabel labelNuevoDni;
+    private javax.swing.JLabel lblNuevaPatente;
+    private javax.swing.JLabel lblNuevoLavado;
+    private javax.swing.JLabel lblNuevoTurno;
+    private javax.swing.JLabel lblReservaId;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlActualizarReserva;
+    private javax.swing.JLabel reservaSiluetaImg;
+    private javax.swing.JSeparator separatorDni;
+    private javax.swing.JSeparator separatorIDReserva;
+    private javax.swing.JSeparator separatorPatente;
+    private javax.swing.JSeparator separatorTurno;
     // End of variables declaration//GEN-END:variables
 }

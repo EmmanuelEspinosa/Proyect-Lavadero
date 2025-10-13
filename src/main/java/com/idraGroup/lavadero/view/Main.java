@@ -15,9 +15,6 @@ import com.idraGroup.lavadero.view.reserva.ReservaView;
  */
 public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main
-     */
     public Main() { 
         initComponents();
         ReservaView reservaPanel = new ReservaView();

@@ -26,87 +26,87 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bgClienteCrear2 = new javax.swing.JPanel();
-        clienteSiluetaImg2 = new javax.swing.JLabel();
-        CiudadImg2 = new javax.swing.JLabel();
-        LogoImg2 = new javax.swing.JLabel();
-        clienteCrearTitulo2 = new javax.swing.JLabel();
-        labelNombre2 = new javax.swing.JLabel();
-        inputNombre2 = new javax.swing.JTextField();
-        separatorDni2 = new javax.swing.JSeparator();
-        botonGuardarCliente2 = new javax.swing.JButton();
+        pnlEliminarAuto = new javax.swing.JPanel();
+        autoSiluetaImg = new javax.swing.JLabel();
+        CiudadImg = new javax.swing.JLabel();
+        LogoImg = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        labelPatente = new javax.swing.JLabel();
+        inputPatente = new javax.swing.JTextField();
+        separatorPatente = new javax.swing.JSeparator();
+        botonEliminarAuto = new javax.swing.JButton();
 
-        bgClienteCrear2.setBackground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear2.setForeground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlEliminarAuto.setBackground(new java.awt.Color(255, 255, 255));
+        pnlEliminarAuto.setForeground(new java.awt.Color(255, 255, 255));
+        pnlEliminarAuto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAuto - copia.png"))); // NOI18N
-        bgClienteCrear2.add(clienteSiluetaImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 250, 430));
+        autoSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fotoAuto - copia.png"))); // NOI18N
+        pnlEliminarAuto.add(autoSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 250, 430));
 
-        CiudadImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        bgClienteCrear2.add(CiudadImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
+        pnlEliminarAuto.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
-        LogoImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
-        bgClienteCrear2.add(LogoImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 80, 40));
+        LogoImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
+        pnlEliminarAuto.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 80, 40));
 
-        clienteCrearTitulo2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo2.setText("ELIMINAR AUTO");
-        bgClienteCrear2.add(clienteCrearTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 280, 30));
+        lblTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblTitulo.setText("ELIMINAR AUTO");
+        pnlEliminarAuto.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 280, 30));
 
-        labelNombre2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelNombre2.setText("PATENTE");
-        bgClienteCrear2.add(labelNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        labelPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        labelPatente.setText("PATENTE");
+        pnlEliminarAuto.add(labelPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        inputNombre2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNombre2.setForeground(new java.awt.Color(204, 204, 204));
-        inputNombre2.setText("Ingrese la patente del auto a eliminar.");
-        inputNombre2.setBorder(null);
-        inputNombre2.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNombre2.addActionListener(new java.awt.event.ActionListener() {
+        inputPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputPatente.setForeground(new java.awt.Color(204, 204, 204));
+        inputPatente.setText("Ingrese la patente del auto a eliminar.");
+        inputPatente.setBorder(null);
+        inputPatente.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputPatente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNombre2ActionPerformed(evt);
+                inputPatenteActionPerformed(evt);
             }
         });
-        bgClienteCrear2.add(inputNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 390, -1));
+        pnlEliminarAuto.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 390, -1));
 
-        separatorDni2.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear2.add(separatorDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
+        separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
+        pnlEliminarAuto.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
 
-        botonGuardarCliente2.setBackground(new java.awt.Color(153, 0, 0));
-        botonGuardarCliente2.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
-        botonGuardarCliente2.setForeground(new java.awt.Color(255, 255, 255));
-        botonGuardarCliente2.setText("Eliminar");
-        botonGuardarCliente2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bgClienteCrear2.add(botonGuardarCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+        botonEliminarAuto.setBackground(new java.awt.Color(153, 0, 0));
+        botonEliminarAuto.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
+        botonEliminarAuto.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarAuto.setText("Eliminar");
+        botonEliminarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlEliminarAuto.add(botonEliminarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlEliminarAuto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bgClienteCrear2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlEliminarAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombre2ActionPerformed
+    private void inputPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNombre2ActionPerformed
+    }//GEN-LAST:event_inputPatenteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CiudadImg2;
-    private javax.swing.JLabel LogoImg2;
-    private javax.swing.JPanel bgClienteCrear2;
-    private javax.swing.JButton botonGuardarCliente2;
-    private javax.swing.JLabel clienteCrearTitulo2;
-    private javax.swing.JLabel clienteSiluetaImg2;
-    private javax.swing.JTextField inputNombre2;
-    private javax.swing.JLabel labelNombre2;
-    private javax.swing.JSeparator separatorDni2;
+    private javax.swing.JLabel CiudadImg;
+    private javax.swing.JLabel LogoImg;
+    private javax.swing.JLabel autoSiluetaImg;
+    private javax.swing.JButton botonEliminarAuto;
+    private javax.swing.JTextField inputPatente;
+    private javax.swing.JLabel labelPatente;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlEliminarAuto;
+    private javax.swing.JSeparator separatorPatente;
     // End of variables declaration//GEN-END:variables
 }

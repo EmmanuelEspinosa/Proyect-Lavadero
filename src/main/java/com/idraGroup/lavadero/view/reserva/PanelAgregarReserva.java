@@ -28,53 +28,53 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private void initComponents() {
 
         GroupTipoLavado = new javax.swing.ButtonGroup();
-        bgClienteCrear = new javax.swing.JPanel();
-        clienteSiluetaImg = new javax.swing.JLabel();
+        pnlAgregarReserva = new javax.swing.JPanel();
+        reservaSiluetaImg = new javax.swing.JLabel();
         CiudadImg = new javax.swing.JLabel();
         LogoImg = new javax.swing.JLabel();
-        clienteCrearTitulo = new javax.swing.JLabel();
-        labelNombre = new javax.swing.JLabel();
-        separatorNombre = new javax.swing.JSeparator();
-        labelDni = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblLavado = new javax.swing.JLabel();
+        separatorDni = new javax.swing.JSeparator();
+        lblDni = new javax.swing.JLabel();
         inputDni = new javax.swing.JTextField();
-        botonGuardarCliente = new javax.swing.JButton();
+        botonGuardarReserva = new javax.swing.JButton();
         bPremium = new javax.swing.JRadioButton();
         bStandard = new javax.swing.JRadioButton();
         bDeluxe = new javax.swing.JRadioButton();
-        labelDni1 = new javax.swing.JLabel();
-        inputDni1 = new javax.swing.JTextField();
-        separatorNombre1 = new javax.swing.JSeparator();
-        labelDni2 = new javax.swing.JLabel();
-        inputDni2 = new javax.swing.JTextField();
-        separatorNombre2 = new javax.swing.JSeparator();
+        lblTurno = new javax.swing.JLabel();
+        inputTurno = new javax.swing.JTextField();
+        separatorTurno = new javax.swing.JSeparator();
+        lblPatente = new javax.swing.JLabel();
+        inputPatente = new javax.swing.JTextField();
+        separatorPatente = new javax.swing.JSeparator();
 
-        bgClienteCrear.setBackground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear.setForeground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlAgregarReserva.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAgregarReserva.setForeground(new java.awt.Color(255, 255, 255));
+        pnlAgregarReserva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
-        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 200, 430));
+        reservaSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
+        pnlAgregarReserva.add(reservaSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 200, 430));
 
         CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        bgClienteCrear.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        pnlAgregarReserva.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
         LogoImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
-        bgClienteCrear.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 80, 40));
+        pnlAgregarReserva.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 80, 40));
 
-        clienteCrearTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo.setText("REGISTRAR RESERVA");
-        bgClienteCrear.add(clienteCrearTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 280, 30));
+        lblTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblTitulo.setText("REGISTRAR RESERVA");
+        pnlAgregarReserva.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 280, 30));
 
-        labelNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelNombre.setText("TIPO LAVADO");
-        bgClienteCrear.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        lblLavado.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblLavado.setText("TIPO LAVADO");
+        pnlAgregarReserva.add(lblLavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
-        separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 10));
+        separatorDni.setForeground(new java.awt.Color(0, 0, 0));
+        pnlAgregarReserva.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 10));
 
-        labelDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni.setText("DNI");
-        bgClienteCrear.add(labelDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        lblDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblDni.setText("DNI");
+        pnlAgregarReserva.add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         inputDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         inputDni.setForeground(new java.awt.Color(204, 204, 204));
@@ -86,14 +86,14 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
                 inputDniActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, -1));
+        pnlAgregarReserva.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, -1));
 
-        botonGuardarCliente.setBackground(new java.awt.Color(0, 134, 190));
-        botonGuardarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
-        botonGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        botonGuardarCliente.setText("Guardar");
-        botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bgClienteCrear.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+        botonGuardarReserva.setBackground(new java.awt.Color(0, 134, 190));
+        botonGuardarReserva.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
+        botonGuardarReserva.setForeground(new java.awt.Color(255, 255, 255));
+        botonGuardarReserva.setText("Guardar");
+        botonGuardarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlAgregarReserva.add(botonGuardarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         bPremium.setText("PREMIUM");
         bPremium.addActionListener(new java.awt.event.ActionListener() {
@@ -101,10 +101,10 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
                 bPremiumActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(bPremium, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        pnlAgregarReserva.add(bPremium, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
         bStandard.setText("STANDARD");
-        bgClienteCrear.add(bStandard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        pnlAgregarReserva.add(bStandard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         bDeluxe.setText("DELUXE");
         bDeluxe.addActionListener(new java.awt.event.ActionListener() {
@@ -112,56 +112,56 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
                 bDeluxeActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(bDeluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+        pnlAgregarReserva.add(bDeluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
-        labelDni1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni1.setText("TURNO");
-        bgClienteCrear.add(labelDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        lblTurno.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblTurno.setText("TURNO");
+        pnlAgregarReserva.add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        inputDni1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni1.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni1.setText("Ingrese patente");
-        inputDni1.setBorder(null);
-        inputDni1.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni1.addActionListener(new java.awt.event.ActionListener() {
+        inputTurno.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputTurno.setForeground(new java.awt.Color(204, 204, 204));
+        inputTurno.setText("Ingrese patente");
+        inputTurno.setBorder(null);
+        inputTurno.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputTurno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDni1ActionPerformed(evt);
+                inputTurnoActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
+        pnlAgregarReserva.add(inputTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
 
-        separatorNombre1.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 10));
+        separatorTurno.setForeground(new java.awt.Color(0, 0, 0));
+        pnlAgregarReserva.add(separatorTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 10));
 
-        labelDni2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni2.setText("PATENTE");
-        bgClienteCrear.add(labelDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        lblPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblPatente.setText("PATENTE");
+        pnlAgregarReserva.add(lblPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        inputDni2.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni2.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni2.setText("Ingrese patente");
-        inputDni2.setBorder(null);
-        inputDni2.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni2.addActionListener(new java.awt.event.ActionListener() {
+        inputPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputPatente.setForeground(new java.awt.Color(204, 204, 204));
+        inputPatente.setText("Ingrese patente");
+        inputPatente.setBorder(null);
+        inputPatente.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputPatente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDni2ActionPerformed(evt);
+                inputPatenteActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 390, -1));
+        pnlAgregarReserva.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 390, -1));
 
-        separatorNombre2.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, 10));
+        separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
+        pnlAgregarReserva.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlAgregarReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(bgClienteCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlAgregarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -178,13 +178,13 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_bDeluxeActionPerformed
 
-    private void inputDni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni1ActionPerformed
+    private void inputTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTurnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDni1ActionPerformed
+    }//GEN-LAST:event_inputTurnoActionPerformed
 
-    private void inputDni2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDni2ActionPerformed
+    private void inputPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDni2ActionPerformed
+    }//GEN-LAST:event_inputPatenteActionPerformed
     private void ConfigurarGrupoBotones(){
         
         GroupTipoLavado.add(bDeluxe);
@@ -200,19 +200,19 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private javax.swing.JRadioButton bDeluxe;
     private javax.swing.JRadioButton bPremium;
     private javax.swing.JRadioButton bStandard;
-    private javax.swing.JPanel bgClienteCrear;
-    private javax.swing.JButton botonGuardarCliente;
-    private javax.swing.JLabel clienteCrearTitulo;
-    private javax.swing.JLabel clienteSiluetaImg;
+    private javax.swing.JButton botonGuardarReserva;
     private javax.swing.JTextField inputDni;
-    private javax.swing.JTextField inputDni1;
-    private javax.swing.JTextField inputDni2;
-    private javax.swing.JLabel labelDni;
-    private javax.swing.JLabel labelDni1;
-    private javax.swing.JLabel labelDni2;
-    private javax.swing.JLabel labelNombre;
-    private javax.swing.JSeparator separatorNombre;
-    private javax.swing.JSeparator separatorNombre1;
-    private javax.swing.JSeparator separatorNombre2;
+    private javax.swing.JTextField inputPatente;
+    private javax.swing.JTextField inputTurno;
+    private javax.swing.JLabel lblDni;
+    private javax.swing.JLabel lblLavado;
+    private javax.swing.JLabel lblPatente;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTurno;
+    private javax.swing.JPanel pnlAgregarReserva;
+    private javax.swing.JLabel reservaSiluetaImg;
+    private javax.swing.JSeparator separatorDni;
+    private javax.swing.JSeparator separatorPatente;
+    private javax.swing.JSeparator separatorTurno;
     // End of variables declaration//GEN-END:variables
 }

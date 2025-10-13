@@ -26,65 +26,46 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bgClienteCrear = new javax.swing.JPanel();
+        pnlAgregarCliente = new javax.swing.JPanel();
         clienteSiluetaImg = new javax.swing.JLabel();
         CiudadImg = new javax.swing.JLabel();
         LogoImg = new javax.swing.JLabel();
-        clienteCrearTitulo = new javax.swing.JLabel();
-        labelNombre = new javax.swing.JLabel();
-        inputNombre = new javax.swing.JTextField();
-        separatorNombre = new javax.swing.JSeparator();
-        labelDni = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblDni = new javax.swing.JLabel();
         inputDni = new javax.swing.JTextField();
+        separatorNombre = new javax.swing.JSeparator();
+        lblNombre = new javax.swing.JLabel();
+        inputNombre = new javax.swing.JTextField();
         separatorDni = new javax.swing.JSeparator();
         labelTelefono = new javax.swing.JLabel();
         inputTelefono = new javax.swing.JTextField();
         separatorTelefono = new javax.swing.JSeparator();
         botonGuardarCliente = new javax.swing.JButton();
 
-        bgClienteCrear.setBackground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear.setForeground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlAgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAgregarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        pnlAgregarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/clienteSilueta.png"))); // NOI18N
-        bgClienteCrear.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        pnlAgregarCliente.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
         CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        bgClienteCrear.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        pnlAgregarCliente.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
         LogoImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
-        bgClienteCrear.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 80, 40));
+        pnlAgregarCliente.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 80, 40));
 
-        clienteCrearTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo.setText("REGISTRAR USUARIO");
-        bgClienteCrear.add(clienteCrearTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 280, 30));
+        lblTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblTitulo.setText("REGISTRAR USUARIO");
+        pnlAgregarCliente.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 280, 30));
 
-        labelNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelNombre.setText("DNI");
-        bgClienteCrear.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-
-        inputNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNombre.setForeground(new java.awt.Color(204, 204, 204));
-        inputNombre.setText("Ingrese su numero de documento");
-        inputNombre.setBorder(null);
-        inputNombre.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNombreActionPerformed(evt);
-            }
-        });
-        bgClienteCrear.add(inputNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
-
-        separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, -1));
-
-        labelDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        labelDni.setText("NOMBRE");
-        bgClienteCrear.add(labelDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        lblDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblDni.setText("DNI");
+        pnlAgregarCliente.add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         inputDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         inputDni.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni.setText("Ingrese su nombre");
+        inputDni.setText("Ingrese su numero de documento");
         inputDni.setBorder(null);
         inputDni.setCaretColor(new java.awt.Color(204, 204, 204));
         inputDni.addActionListener(new java.awt.event.ActionListener() {
@@ -92,14 +73,33 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
                 inputDniActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
+        pnlAgregarCliente.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
+
+        separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
+        pnlAgregarCliente.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, -1));
+
+        lblNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        lblNombre.setText("NOMBRE");
+        pnlAgregarCliente.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        inputNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        inputNombre.setForeground(new java.awt.Color(204, 204, 204));
+        inputNombre.setText("Ingrese su nombre");
+        inputNombre.setBorder(null);
+        inputNombre.setCaretColor(new java.awt.Color(204, 204, 204));
+        inputNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNombreActionPerformed(evt);
+            }
+        });
+        pnlAgregarCliente.add(inputNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
 
         separatorDni.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, -1));
+        pnlAgregarCliente.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, -1));
 
         labelTelefono.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         labelTelefono.setText("TELEFONO");
-        bgClienteCrear.add(labelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        pnlAgregarCliente.add(labelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         inputTelefono.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         inputTelefono.setForeground(new java.awt.Color(204, 204, 204));
@@ -111,39 +111,39 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
                 inputTelefonoActionPerformed(evt);
             }
         });
-        bgClienteCrear.add(inputTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 390, -1));
+        pnlAgregarCliente.add(inputTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 390, -1));
 
         separatorTelefono.setForeground(new java.awt.Color(0, 0, 0));
-        bgClienteCrear.add(separatorTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 340, -1));
+        pnlAgregarCliente.add(separatorTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 340, -1));
 
         botonGuardarCliente.setBackground(new java.awt.Color(0, 134, 190));
         botonGuardarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
         botonGuardarCliente.setText("Guardar");
         botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bgClienteCrear.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+        pnlAgregarCliente.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlAgregarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bgClienteCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNombreActionPerformed
-
     private void inputDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDniActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDniActionPerformed
+
+    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNombreActionPerformed
 
     private void inputTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelefonoActionPerformed
         // TODO add your handling code here:
@@ -153,16 +153,16 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
-    private javax.swing.JPanel bgClienteCrear;
     private javax.swing.JButton botonGuardarCliente;
-    private javax.swing.JLabel clienteCrearTitulo;
     private javax.swing.JLabel clienteSiluetaImg;
     private javax.swing.JTextField inputDni;
     private javax.swing.JTextField inputNombre;
     private javax.swing.JTextField inputTelefono;
-    private javax.swing.JLabel labelDni;
-    private javax.swing.JLabel labelNombre;
     private javax.swing.JLabel labelTelefono;
+    private javax.swing.JLabel lblDni;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlAgregarCliente;
     private javax.swing.JSeparator separatorDni;
     private javax.swing.JSeparator separatorNombre;
     private javax.swing.JSeparator separatorTelefono;

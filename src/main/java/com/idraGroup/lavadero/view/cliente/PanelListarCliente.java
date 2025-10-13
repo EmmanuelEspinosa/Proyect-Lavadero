@@ -26,32 +26,32 @@ public class PanelListarCliente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bgClienteCrear3 = new javax.swing.JPanel();
-        clienteSiluetaImg3 = new javax.swing.JLabel();
-        CiudadImg3 = new javax.swing.JLabel();
-        LogoImg3 = new javax.swing.JLabel();
-        clienteCrearTitulo3 = new javax.swing.JLabel();
+        pnlListarCliente = new javax.swing.JPanel();
+        clienteSiluetaImg = new javax.swing.JLabel();
+        CiudadImg = new javax.swing.JLabel();
+        LogoImg = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblClientes = new javax.swing.JTable();
 
-        bgClienteCrear3.setBackground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear3.setForeground(new java.awt.Color(255, 255, 255));
-        bgClienteCrear3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlListarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        pnlListarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        pnlListarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clienteSiluetaImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/clienteSilueta.png"))); // NOI18N
-        bgClienteCrear3.add(clienteSiluetaImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        clienteSiluetaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/clienteSilueta.png"))); // NOI18N
+        pnlListarCliente.add(clienteSiluetaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
-        CiudadImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        bgClienteCrear3.add(CiudadImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
+        CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
+        pnlListarCliente.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 280, 430));
 
-        LogoImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
-        bgClienteCrear3.add(LogoImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+        LogoImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
+        pnlListarCliente.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        clienteCrearTitulo3.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        clienteCrearTitulo3.setText("LISTA DE USUARIO");
-        bgClienteCrear3.add(clienteCrearTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 30));
+        lblTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblTitulo.setText("LISTA DE USUARIO");
+        pnlListarCliente.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", "Emmanul", "45500223", "2236202637"},
                 {"2", "Lorenzo", "46879458", "2234587889"},
@@ -61,32 +61,32 @@ public class PanelListarCliente extends javax.swing.JPanel {
                 "ID", "NOMBRE", "DNI", "TELEFONO"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblClientes);
 
-        bgClienteCrear3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 470, 370));
+        pnlListarCliente.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 470, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgClienteCrear3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlListarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bgClienteCrear3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlListarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CiudadImg3;
-    private javax.swing.JLabel LogoImg3;
-    private javax.swing.JPanel bgClienteCrear3;
-    private javax.swing.JLabel clienteCrearTitulo3;
-    private javax.swing.JLabel clienteSiluetaImg3;
+    private javax.swing.JLabel CiudadImg;
+    private javax.swing.JLabel LogoImg;
+    private javax.swing.JLabel clienteSiluetaImg;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlListarCliente;
+    private javax.swing.JTable tblClientes;
     // End of variables declaration//GEN-END:variables
 }
