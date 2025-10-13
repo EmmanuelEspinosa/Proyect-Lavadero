@@ -16,17 +16,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="bgClienteCrear1" alignment="1" pref="794" max="32767" attributes="0"/>
+          <Component id="pnlActualizarCliente" alignment="1" pref="794" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="bgClienteCrear1" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="pnlActualizarCliente" alignment="1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="bgClienteCrear1">
+    <Container class="javax.swing.JPanel" name="pnlActualizarCliente">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -239,7 +239,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="botonGuardarCliente">
+        <Component class="javax.swing.JButton" name="botonActualizarCliente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="be" green="86" red="0" type="rgb"/>
