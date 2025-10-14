@@ -39,28 +39,28 @@ public class PanelListarReserva extends javax.swing.JPanel {
         pnlListarReserva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         reservaSiluetaImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FotoReserva.png"))); // NOI18N
-        pnlListarReserva.add(reservaSiluetaImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 200, 430));
+        pnlListarReserva.add(reservaSiluetaImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 200, 430));
 
         CiudadImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/city.png"))); // NOI18N
-        pnlListarReserva.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 240, 430));
+        pnlListarReserva.add(CiudadImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 200, 430));
 
         LogoImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoLavadero.png"))); // NOI18N
         pnlListarReserva.add(LogoImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
         lblTitulo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         lblTitulo.setText("LISTA DE RESERVAS");
-        pnlListarReserva.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 30));
+        pnlListarReserva.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 190, 30));
 
         tblReservas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "PATENTE", "DNI", "TURNO", "TIPO LAVADO"
+                "ID", "PATENTE", "DNI", "TURNO", "TIPO LAVADO", "PRECIO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -69,7 +69,7 @@ public class PanelListarReserva extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblReservas);
 
-        pnlListarReserva.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 510, 370));
+        pnlListarReserva.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 550, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
