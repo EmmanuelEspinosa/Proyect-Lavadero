@@ -32,9 +32,9 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblReservaId = new javax.swing.JLabel();
-        inputReservaId = new javax.swing.JTextField();
         separatorReservaId = new javax.swing.JSeparator();
         botonEliminarReserva = new javax.swing.JButton();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
         pnlEliminarReserva.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarReserva.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,18 +57,6 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         lblReservaId.setText("ID RESERVA");
         pnlEliminarReserva.add(lblReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        inputReservaId.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputReservaId.setForeground(new java.awt.Color(204, 204, 204));
-        inputReservaId.setText("Ingrese el ID de la reserva a eliminar");
-        inputReservaId.setBorder(null);
-        inputReservaId.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputReservaId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputReservaIdActionPerformed(evt);
-            }
-        });
-        pnlEliminarReserva.add(inputReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 390, -1));
-
         separatorReservaId.setForeground(new java.awt.Color(0, 0, 0));
         pnlEliminarReserva.add(separatorReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
 
@@ -78,6 +66,14 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         botonEliminarReserva.setText("Eliminar");
         botonEliminarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlEliminarReserva.add(botonEliminarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+        pnlEliminarReserva.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,16 +89,16 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputReservaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputReservaIdActionPerformed
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputReservaIdActionPerformed
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JButton botonEliminarReserva;
-    private javax.swing.JTextField inputReservaId;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel lblReservaId;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlEliminarReserva;

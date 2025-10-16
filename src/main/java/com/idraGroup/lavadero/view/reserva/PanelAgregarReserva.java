@@ -36,17 +36,17 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         lblLavado = new javax.swing.JLabel();
         separatorDni = new javax.swing.JSeparator();
         lblDni = new javax.swing.JLabel();
-        inputDni = new javax.swing.JTextField();
         botonGuardarReserva = new javax.swing.JButton();
         bPremium = new javax.swing.JRadioButton();
         bStandard = new javax.swing.JRadioButton();
         bDeluxe = new javax.swing.JRadioButton();
         lblTurno = new javax.swing.JLabel();
-        inputTurno = new javax.swing.JTextField();
         separatorTurno = new javax.swing.JSeparator();
         lblPatente = new javax.swing.JLabel();
-        inputPatente = new javax.swing.JTextField();
         separatorPatente = new javax.swing.JSeparator();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
         pnlAgregarReserva.setBackground(new java.awt.Color(255, 255, 255));
         pnlAgregarReserva.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,18 +75,6 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         lblDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblDni.setText("DNI");
         pnlAgregarReserva.add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
-        inputDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni.setText("Ingrese patente del auto a actualizar");
-        inputDni.setBorder(null);
-        inputDni.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDniActionPerformed(evt);
-            }
-        });
-        pnlAgregarReserva.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, -1));
 
         botonGuardarReserva.setBackground(new java.awt.Color(0, 134, 190));
         botonGuardarReserva.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
@@ -118,18 +106,6 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         lblTurno.setText("TURNO");
         pnlAgregarReserva.add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        inputTurno.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputTurno.setForeground(new java.awt.Color(204, 204, 204));
-        inputTurno.setText("Ingrese patente");
-        inputTurno.setBorder(null);
-        inputTurno.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputTurno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTurnoActionPerformed(evt);
-            }
-        });
-        pnlAgregarReserva.add(inputTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
-
         separatorTurno.setForeground(new java.awt.Color(0, 0, 0));
         pnlAgregarReserva.add(separatorTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 10));
 
@@ -137,20 +113,25 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         lblPatente.setText("PATENTE");
         pnlAgregarReserva.add(lblPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        inputPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputPatente.setText("Ingrese patente");
-        inputPatente.setBorder(null);
-        inputPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPatenteActionPerformed(evt);
-            }
-        });
-        pnlAgregarReserva.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 390, -1));
-
         separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
         pnlAgregarReserva.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, 10));
+
+        jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        pnlAgregarReserva.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 340, -1));
+
+        try {
+            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlAgregarReserva.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 340, -1));
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlAgregarReserva.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -166,10 +147,6 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputDniActionPerformed
-
     private void bPremiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPremiumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bPremiumActionPerformed
@@ -177,14 +154,6 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private void bDeluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeluxeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bDeluxeActionPerformed
-
-    private void inputTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTurnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTurnoActionPerformed
-
-    private void inputPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPatenteActionPerformed
     private void ConfigurarGrupoBotones(){
         
         GroupTipoLavado.add(bDeluxe);
@@ -201,9 +170,9 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private javax.swing.JRadioButton bPremium;
     private javax.swing.JRadioButton bStandard;
     private javax.swing.JButton botonGuardarReserva;
-    private javax.swing.JTextField inputDni;
-    private javax.swing.JTextField inputPatente;
-    private javax.swing.JTextField inputTurno;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JLabel lblDni;
     private javax.swing.JLabel lblLavado;
     private javax.swing.JLabel lblPatente;

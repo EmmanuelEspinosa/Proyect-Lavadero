@@ -36,12 +36,12 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         lblTipoAuto = new javax.swing.JLabel();
         separatorPatente = new javax.swing.JSeparator();
         lblPatente = new javax.swing.JLabel();
-        inputPatente = new javax.swing.JTextField();
         botonGuardarAuto = new javax.swing.JButton();
         bCamioneta = new javax.swing.JRadioButton();
         bSedan = new javax.swing.JRadioButton();
         bSUV = new javax.swing.JRadioButton();
         bFurgoneta = new javax.swing.JRadioButton();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
 
         pnlCrearAuto.setBackground(new java.awt.Color(255, 255, 255));
         pnlCrearAuto.setForeground(new java.awt.Color(255, 255, 255));
@@ -70,18 +70,6 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         lblPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblPatente.setText("PATENTE");
         pnlCrearAuto.add(lblPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
-
-        inputPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputPatente.setText("Ingrese su nombre");
-        inputPatente.setBorder(null);
-        inputPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPatenteActionPerformed(evt);
-            }
-        });
-        pnlCrearAuto.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
 
         botonGuardarAuto.setBackground(new java.awt.Color(0, 134, 190));
         botonGuardarAuto.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
@@ -112,6 +100,13 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         });
         pnlCrearAuto.add(bFurgoneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlCrearAuto.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,10 +120,6 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inputPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPatenteActionPerformed
 
     private void bCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCamionetaActionPerformed
         // TODO add your handling code here:
@@ -157,7 +148,7 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
     private javax.swing.JRadioButton bSUV;
     private javax.swing.JRadioButton bSedan;
     private javax.swing.JButton botonGuardarAuto;
-    private javax.swing.JTextField inputPatente;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel lblPatente;
     private javax.swing.JLabel lblTipoAuto;
     private javax.swing.JLabel lblTitulo;

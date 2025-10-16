@@ -32,9 +32,9 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         labelPatente = new javax.swing.JLabel();
-        inputPatente = new javax.swing.JTextField();
         separatorPatente = new javax.swing.JSeparator();
         botonEliminarAuto = new javax.swing.JButton();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
 
         pnlEliminarAuto.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarAuto.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,18 +57,6 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         labelPatente.setText("PATENTE");
         pnlEliminarAuto.add(labelPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        inputPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputPatente.setText("Ingrese la patente del auto a eliminar.");
-        inputPatente.setBorder(null);
-        inputPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPatenteActionPerformed(evt);
-            }
-        });
-        pnlEliminarAuto.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 390, -1));
-
         separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
         pnlEliminarAuto.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
 
@@ -78,6 +66,13 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         botonEliminarAuto.setText("Eliminar");
         botonEliminarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlEliminarAuto.add(botonEliminarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlEliminarAuto.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,17 +88,13 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPatenteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JLabel autoSiluetaImg;
     private javax.swing.JButton botonEliminarAuto;
-    private javax.swing.JTextField inputPatente;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel labelPatente;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlEliminarAuto;
