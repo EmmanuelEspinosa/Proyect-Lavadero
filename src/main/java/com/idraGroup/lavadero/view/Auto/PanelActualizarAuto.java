@@ -36,15 +36,15 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         lblNuevoTipo = new javax.swing.JLabel();
         separatorPatenteActual = new javax.swing.JSeparator();
         lblPatenteActual = new javax.swing.JLabel();
-        inputPatenteActual = new javax.swing.JTextField();
         botonActualizarAuto = new javax.swing.JButton();
         bCamioneta = new javax.swing.JRadioButton();
         bSedan = new javax.swing.JRadioButton();
         bSUV = new javax.swing.JRadioButton();
         bFurgoneta = new javax.swing.JRadioButton();
         lblNuevaPatente = new javax.swing.JLabel();
-        inputNuevaPatente = new javax.swing.JTextField();
         separatorNuevaPatente = new javax.swing.JSeparator();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
 
         pnlActualizarAuto.setBackground(new java.awt.Color(255, 255, 255));
         pnlActualizarAuto.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,18 +73,6 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         lblPatenteActual.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblPatenteActual.setText("PATENTE ACTUAL");
         pnlActualizarAuto.add(lblPatenteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
-        inputPatenteActual.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputPatenteActual.setForeground(new java.awt.Color(204, 204, 204));
-        inputPatenteActual.setText("Ingrese patente del auto a actualizar");
-        inputPatenteActual.setBorder(null);
-        inputPatenteActual.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputPatenteActual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPatenteActualActionPerformed(evt);
-            }
-        });
-        pnlActualizarAuto.add(inputPatenteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 390, -1));
 
         botonActualizarAuto.setBackground(new java.awt.Color(0, 134, 190));
         botonActualizarAuto.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
@@ -124,20 +112,22 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         lblNuevaPatente.setText("NUEVA PATENTE");
         pnlActualizarAuto.add(lblNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        inputNuevaPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNuevaPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputNuevaPatente.setText("Ingrese patente");
-        inputNuevaPatente.setBorder(null);
-        inputNuevaPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNuevaPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNuevaPatenteActionPerformed(evt);
-            }
-        });
-        pnlActualizarAuto.add(inputNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 390, -1));
-
         separatorNuevaPatente.setForeground(new java.awt.Color(0, 0, 0));
         pnlActualizarAuto.add(separatorNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 340, 10));
+
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlActualizarAuto.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 340, -1));
+
+        try {
+            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlActualizarAuto.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -153,10 +143,6 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputPatenteActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPatenteActualActionPerformed
-
     private void bCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCamionetaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCamionetaActionPerformed
@@ -164,10 +150,6 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
     private void bFurgonetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFurgonetaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bFurgonetaActionPerformed
-
-    private void inputNuevaPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevaPatenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNuevaPatenteActionPerformed
 
     private void bSedanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSedanActionPerformed
         // TODO add your handling code here:
@@ -191,8 +173,8 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
     private javax.swing.JRadioButton bSUV;
     private javax.swing.JRadioButton bSedan;
     private javax.swing.JButton botonActualizarAuto;
-    private javax.swing.JTextField inputNuevaPatente;
-    private javax.swing.JTextField inputPatenteActual;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JLabel lblNuevaPatente;
     private javax.swing.JLabel lblNuevoTipo;
     private javax.swing.JLabel lblPatenteActual;

@@ -32,15 +32,15 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblDni = new javax.swing.JLabel();
-        inputDni = new javax.swing.JTextField();
         separatorNombre = new javax.swing.JSeparator();
         lblNombre = new javax.swing.JLabel();
-        inputNombre = new javax.swing.JTextField();
         separatorDni = new javax.swing.JSeparator();
         labelTelefono = new javax.swing.JLabel();
-        inputTelefono = new javax.swing.JTextField();
         separatorTelefono = new javax.swing.JSeparator();
         botonGuardarCliente = new javax.swing.JButton();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
 
         pnlAgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
         pnlAgregarCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,18 +63,6 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         lblDni.setText("DNI");
         pnlAgregarCliente.add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        inputDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputDni.setForeground(new java.awt.Color(204, 204, 204));
-        inputDni.setText("Ingrese su numero de documento");
-        inputDni.setBorder(null);
-        inputDni.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputDni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputDniActionPerformed(evt);
-            }
-        });
-        pnlAgregarCliente.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 390, -1));
-
         separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
         pnlAgregarCliente.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, -1));
 
@@ -82,36 +70,12 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         lblNombre.setText("NOMBRE");
         pnlAgregarCliente.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        inputNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNombre.setForeground(new java.awt.Color(204, 204, 204));
-        inputNombre.setText("Ingrese su nombre");
-        inputNombre.setBorder(null);
-        inputNombre.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNombreActionPerformed(evt);
-            }
-        });
-        pnlAgregarCliente.add(inputNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
-
         separatorDni.setForeground(new java.awt.Color(0, 0, 0));
         pnlAgregarCliente.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, -1));
 
         labelTelefono.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         labelTelefono.setText("TELEFONO");
         pnlAgregarCliente.add(labelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
-
-        inputTelefono.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputTelefono.setForeground(new java.awt.Color(204, 204, 204));
-        inputTelefono.setText("Ingrese su numero de telefono");
-        inputTelefono.setBorder(null);
-        inputTelefono.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputTelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTelefonoActionPerformed(evt);
-            }
-        });
-        pnlAgregarCliente.add(inputTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 390, -1));
 
         separatorTelefono.setForeground(new java.awt.Color(0, 0, 0));
         pnlAgregarCliente.add(separatorTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 340, -1));
@@ -122,6 +86,21 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         botonGuardarCliente.setText("Guardar");
         botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlAgregarCliente.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+
+        try {
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlAgregarCliente.add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
+        pnlAgregarCliente.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
+
+        try {
+            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlAgregarCliente.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,27 +116,15 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputDniActionPerformed
-
-    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNombreActionPerformed
-
-    private void inputTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTelefonoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JButton botonGuardarCliente;
     private javax.swing.JLabel clienteSiluetaImg;
-    private javax.swing.JTextField inputDni;
-    private javax.swing.JTextField inputNombre;
-    private javax.swing.JTextField inputTelefono;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelTelefono;
     private javax.swing.JLabel lblDni;
     private javax.swing.JLabel lblNombre;

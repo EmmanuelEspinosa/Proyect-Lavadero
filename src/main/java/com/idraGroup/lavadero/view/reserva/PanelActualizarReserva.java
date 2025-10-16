@@ -36,20 +36,20 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         lblNuevoLavado = new javax.swing.JLabel();
         separatorIDReserva = new javax.swing.JSeparator();
         lblReservaId = new javax.swing.JLabel();
-        inputReservaId = new javax.swing.JTextField();
         botonActualizarReserva = new javax.swing.JButton();
         bPremium = new javax.swing.JRadioButton();
         bStandard = new javax.swing.JRadioButton();
         bDeluxe = new javax.swing.JRadioButton();
         lblNuevoTurno = new javax.swing.JLabel();
-        inputNuevoTurno = new javax.swing.JTextField();
         separatorTurno = new javax.swing.JSeparator();
         lblNuevaPatente = new javax.swing.JLabel();
-        inputNuevaPatente = new javax.swing.JTextField();
         separatorPatente = new javax.swing.JSeparator();
         labelNuevoDni = new javax.swing.JLabel();
-        inputNuevoDni = new javax.swing.JTextField();
         separatorDni = new javax.swing.JSeparator();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        jFormattedTextField5 = new javax.swing.JFormattedTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
         pnlActualizarReserva.setBackground(new java.awt.Color(255, 255, 255));
         pnlActualizarReserva.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,18 +78,6 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         lblReservaId.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblReservaId.setText("ID DE RESERVA");
         pnlActualizarReserva.add(lblReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        inputReservaId.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputReservaId.setForeground(new java.awt.Color(204, 204, 204));
-        inputReservaId.setText("Ingrese el ID de la reserva a actualizar");
-        inputReservaId.setBorder(null);
-        inputReservaId.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputReservaId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputReservaIdActionPerformed(evt);
-            }
-        });
-        pnlActualizarReserva.add(inputReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 390, -1));
 
         botonActualizarReserva.setBackground(new java.awt.Color(0, 134, 190));
         botonActualizarReserva.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
@@ -121,36 +109,12 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         lblNuevoTurno.setText("NUEVO TURNO");
         pnlActualizarReserva.add(lblNuevoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        inputNuevoTurno.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNuevoTurno.setForeground(new java.awt.Color(204, 204, 204));
-        inputNuevoTurno.setText("Ingrese patente");
-        inputNuevoTurno.setBorder(null);
-        inputNuevoTurno.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNuevoTurno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNuevoTurnoActionPerformed(evt);
-            }
-        });
-        pnlActualizarReserva.add(inputNuevoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 390, -1));
-
         separatorTurno.setForeground(new java.awt.Color(0, 0, 0));
         pnlActualizarReserva.add(separatorTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 340, 10));
 
         lblNuevaPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblNuevaPatente.setText("NUEVA PATENTE");
         pnlActualizarReserva.add(lblNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
-
-        inputNuevaPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNuevaPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputNuevaPatente.setText("Ingrese patente");
-        inputNuevaPatente.setBorder(null);
-        inputNuevaPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNuevaPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNuevaPatenteActionPerformed(evt);
-            }
-        });
-        pnlActualizarReserva.add(inputNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 390, -1));
 
         separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
         pnlActualizarReserva.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 340, 10));
@@ -159,20 +123,33 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         labelNuevoDni.setText("NUEVO DNI");
         pnlActualizarReserva.add(labelNuevoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        inputNuevoDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNuevoDni.setForeground(new java.awt.Color(204, 204, 204));
-        inputNuevoDni.setText("Ingrese patente del auto a actualizar");
-        inputNuevoDni.setBorder(null);
-        inputNuevoDni.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNuevoDni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNuevoDniActionPerformed(evt);
-            }
-        });
-        pnlActualizarReserva.add(inputNuevoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
-
         separatorDni.setForeground(new java.awt.Color(0, 0, 0));
         pnlActualizarReserva.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, 10));
+
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlActualizarReserva.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
+
+        jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        pnlActualizarReserva.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, -1));
+
+        try {
+            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlActualizarReserva.add(jFormattedTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+        pnlActualizarReserva.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -186,10 +163,6 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputReservaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputReservaIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputReservaIdActionPerformed
-
     private void bPremiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPremiumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bPremiumActionPerformed
@@ -198,17 +171,9 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_bDeluxeActionPerformed
 
-    private void inputNuevoTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevoTurnoActionPerformed
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNuevoTurnoActionPerformed
-
-    private void inputNuevaPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevaPatenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNuevaPatenteActionPerformed
-
-    private void inputNuevoDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevoDniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNuevoDniActionPerformed
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
     private void ConfigurarGrupoBotones(){
         
         GroupTipoLavado.add(bDeluxe);
@@ -225,10 +190,10 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
     private javax.swing.JRadioButton bPremium;
     private javax.swing.JRadioButton bStandard;
     private javax.swing.JButton botonActualizarReserva;
-    private javax.swing.JTextField inputNuevaPatente;
-    private javax.swing.JTextField inputNuevoDni;
-    private javax.swing.JTextField inputNuevoTurno;
-    private javax.swing.JTextField inputReservaId;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
+    private javax.swing.JFormattedTextField jFormattedTextField5;
     private javax.swing.JLabel labelNuevoDni;
     private javax.swing.JLabel lblNuevaPatente;
     private javax.swing.JLabel lblNuevoLavado;
