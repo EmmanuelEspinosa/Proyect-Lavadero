@@ -1,8 +1,6 @@
 package com.idragroup.lavadero.dao;
-
-import com.idragroup.lavadero.dao.mem.DataStore;
-import com.idragroup.lavadero.model.Cliente;
-
+import com.idraGroup.lavadero.dao.mem.DataStore;
+import com.idraGroup.lavadero.model.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
