@@ -8,8 +8,7 @@ package com.idraGroup.lavadero.view;
 import com.idraGroup.lavadero.view.Auto.AutoView;
 import com.idraGroup.lavadero.view.cliente.ClienteView;
 import com.idraGroup.lavadero.view.reserva.ReservaView;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  *
@@ -26,11 +25,6 @@ public class Main extends javax.swing.JFrame {
         AutoView autoPanel = new AutoView();
         MainTabbedPane.addTab("AUTO",autoPanel);
         
-        List l = new ArrayList();
-        
-
-        
-   
     }
 
     /**
