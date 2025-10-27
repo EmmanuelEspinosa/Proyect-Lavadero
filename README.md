@@ -1,4 +1,4 @@
-![Sistema de Lavadero](./src/main/resources/imagenes/CarWash.png)
+![Sistema de Lavadero](src/main/resources/imagenes/CarWash.png)
 
 
 # 🧼 Sistema de Gestión de Lavadero
