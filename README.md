@@ -1,3 +1,6 @@
+![Sistema de Lavadero](./src/main/resources/imagenes/CarWash.png)
+
+
 # 🧼 Sistema de Gestión de Lavadero
 
 **Instituto:** IDRA – Tecnicatura en Desarrollo de Software  
