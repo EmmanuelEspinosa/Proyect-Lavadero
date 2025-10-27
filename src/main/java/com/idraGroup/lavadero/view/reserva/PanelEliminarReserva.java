@@ -4,16 +4,23 @@
  */
 package com.idraGroup.lavadero.view.reserva;
 
+import com.idraGroup.lavadero.controller.ReservaController;
+import com.idraGroup.lavadero.model.Reserva;
+import java.util.Optional;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
  */
 public class PanelEliminarReserva extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelEliminarReserva
-     */
-    public PanelEliminarReserva() {
+    private final ReservaController reservaController;
+    private final PanelListarReserva panelListarReserva;
+
+    public PanelEliminarReserva(ReservaController reservaController, PanelListarReserva panelListarReserva) {
+        this.reservaController = reservaController;
+        this.panelListarReserva = panelListarReserva;
         initComponents();
     }
 
@@ -32,9 +39,8 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblReservaId = new javax.swing.JLabel();
-        inputReservaId = new javax.swing.JTextField();
-        separatorReservaId = new javax.swing.JSeparator();
         botonEliminarReserva = new javax.swing.JButton();
+        inputIdReserva = new javax.swing.JFormattedTextField();
 
         pnlEliminarReserva.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarReserva.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,27 +63,25 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         lblReservaId.setText("ID RESERVA");
         pnlEliminarReserva.add(lblReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        inputReservaId.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputReservaId.setForeground(new java.awt.Color(204, 204, 204));
-        inputReservaId.setText("Ingrese el ID de la reserva a eliminar");
-        inputReservaId.setBorder(null);
-        inputReservaId.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputReservaId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputReservaIdActionPerformed(evt);
-            }
-        });
-        pnlEliminarReserva.add(inputReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 390, -1));
-
-        separatorReservaId.setForeground(new java.awt.Color(0, 0, 0));
-        pnlEliminarReserva.add(separatorReservaId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
-
         botonEliminarReserva.setBackground(new java.awt.Color(153, 0, 0));
         botonEliminarReserva.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonEliminarReserva.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarReserva.setText("Eliminar");
         botonEliminarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonEliminarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarReservaActionPerformed(evt);
+            }
+        });
         pnlEliminarReserva.add(botonEliminarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+
+        inputIdReserva.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        inputIdReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputIdReservaActionPerformed(evt);
+            }
+        });
+        pnlEliminarReserva.add(inputIdReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,20 +97,78 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputReservaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputReservaIdActionPerformed
+    private void inputIdReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdReservaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputReservaIdActionPerformed
+    }//GEN-LAST:event_inputIdReservaActionPerformed
 
+    private void botonEliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarReservaActionPerformed
+        try {
+            String idAEliminar = inputIdReserva.getText().trim();
+            if (idAEliminar.isEmpty()) {
+                throw new IllegalArgumentException("Ingrese el id de la reserva que desea eliminar.");
+            }
+
+            int idEliminar = Integer.parseInt(idAEliminar);
+
+            Optional<Reserva> resultado = reservaController.buscarPorId(idEliminar);
+
+            if (resultado.isPresent()) {
+                Reserva reservaEliminar = resultado.get();
+
+                int confirmacion = JOptionPane.showConfirmDialog(this,
+                        "¿Está seguro de eliminar la reserva con el ID: " + idEliminar + "? Esta acción es irreversible.",
+                        "Confirmar Eliminación",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmacion == JOptionPane.YES_OPTION) {
+                    reservaController.eliminarReserva(reservaEliminar.getId());
+
+                    JOptionPane.showMessageDialog(this,
+                            "Reserva (ID: " + idEliminar + ") eliminado exitosamente.",
+                            "Éxito",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    LimpiarInputs();
+                    panelListarReserva.recargarDatos();
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Eliminación cancelada.", "Cancelado", JOptionPane.INFORMATION_MESSAGE);
+                    LimpiarInputs();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No se encontró una reserva con el ID: " + idEliminar + ". No se elimino.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                LimpiarInputs();
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El ID debe ser un número entero válido.", "Error de Formato", JOptionPane.WARNING_MESSAGE);
+            LimpiarInputs();
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validación", JOptionPane.WARNING_MESSAGE);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al eliminar la reserva" + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+
+        }
+    }//GEN-LAST:event_botonEliminarReservaActionPerformed
+
+    private void LimpiarInputs() {
+        inputIdReserva.setText("");
+        inputIdReserva.setValue(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JButton botonEliminarReserva;
-    private javax.swing.JTextField inputReservaId;
+    private javax.swing.JFormattedTextField inputIdReserva;
     private javax.swing.JLabel lblReservaId;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlEliminarReserva;
     private javax.swing.JLabel reservaSiluetaImg;
-    private javax.swing.JSeparator separatorReservaId;
     // End of variables declaration//GEN-END:variables
+
 }

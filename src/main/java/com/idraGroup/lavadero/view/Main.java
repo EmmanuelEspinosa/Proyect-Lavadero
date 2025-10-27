@@ -4,33 +4,47 @@
  */
 package com.idraGroup.lavadero.view;
 
-
+import com.idraGroup.lavadero.controller.AutoController;
+import com.idraGroup.lavadero.controller.ClienteController;
+import com.idraGroup.lavadero.controller.ReservaController;
+import com.idraGroup.lavadero.dao.AutoDao;
+import com.idraGroup.lavadero.dao.ClienteDao;
+import com.idraGroup.lavadero.dao.ReservaDao;
+import com.idraGroup.lavadero.dao.jdbc.AutoDAOJDBC;
+import com.idraGroup.lavadero.dao.jdbc.ClienteDAOJDBC;
+import com.idraGroup.lavadero.dao.jdbc.ReservaDAOJDBC;
 import com.idraGroup.lavadero.view.Auto.AutoView;
 import com.idraGroup.lavadero.view.cliente.ClienteView;
 import com.idraGroup.lavadero.view.reserva.ReservaView;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- *
- * @author LoloColombo
- */
+
+
 public class Main extends javax.swing.JFrame {
 
-    public Main() { 
+    public Main() {
         initComponents();
-        ReservaView reservaPanel = new ReservaView();
-        MainTabbedPane.addTab("RESERVA",reservaPanel);
-        ClienteView clientePanel = new ClienteView();
-        MainTabbedPane.addTab("CLIENTE",clientePanel);
-        AutoView autoPanel = new AutoView();
-        MainTabbedPane.addTab("AUTO",autoPanel);
-        
-        List l = new ArrayList();
-        
 
+        //auto
+        AutoDao autoDaoImpl = new AutoDAOJDBC();
+        AutoController autoController = new AutoController(autoDaoImpl);
+
+        //cliente
+        ClienteDao clienteDaoImpl = new ClienteDAOJDBC();
+        ClienteController clienteController = new ClienteController(clienteDaoImpl);
         
-   
+        //reserva
+        ReservaDao reservaDaoImpl = new ReservaDAOJDBC();
+        ReservaController reservaController = new ReservaController(reservaDaoImpl, clienteController, autoController);
+        
+        ReservaView reservaPanel = new ReservaView(reservaController);
+        MainTabbedPane.addTab("RESERVA", reservaPanel);
+        
+        ClienteView clientePanel = new ClienteView(clienteController);
+        MainTabbedPane.addTab("CLIENTE", clientePanel);
+        
+        AutoView autoPanel = new AutoView(autoController);
+        MainTabbedPane.addTab("AUTO", autoPanel);
+
     }
 
     /**

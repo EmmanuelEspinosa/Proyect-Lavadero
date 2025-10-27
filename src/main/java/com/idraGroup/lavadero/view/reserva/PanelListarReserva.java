@@ -4,19 +4,60 @@
  */
 package com.idraGroup.lavadero.view.reserva;
 
+import com.idraGroup.lavadero.controller.ReservaController;
+import com.idraGroup.lavadero.model.Reserva;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.time.format.DateTimeFormatter;
 /**
  *
  * @author LoloColombo
  */
 public class PanelListarReserva extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelListarReserva
-     */
-    public PanelListarReserva() {
+
+    private final ReservaController reservaController;
+    private static final DateTimeFormatter UI_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    public PanelListarReserva(ReservaController reservaController) {
+        this.reservaController = reservaController;
         initComponents();
+        cargarReservas();
     }
 
+    public void cargarReservas() {
+       
+        DefaultTableModel model = (DefaultTableModel) tblReservas.getModel();
+     
+        model.setRowCount(0); 
+
+        try {
+           
+            List<Reserva> listaReservas = reservaController.listarReservas();
+
+            for (Reserva reserva : listaReservas) {
+             String turnoFormateado = reserva.getTurno().format(UI_FORMATTER);
+                model.addRow(new Object[]{
+                    reserva.getId(),
+                    reserva.getAuto().getPatente(),
+                    reserva.getCliente().getDni(),
+                    turnoFormateado,
+                    reserva.getTipoLavado(),
+                    reserva.getPrecio()
+                });
+            }
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this,
+                    "Error al cargar las reservas desde la base de datos: " + e.getMessage(),
+                    "Error de Persistencia",
+                    JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }
+    
+    public void recargarDatos(){
+        cargarReservas();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

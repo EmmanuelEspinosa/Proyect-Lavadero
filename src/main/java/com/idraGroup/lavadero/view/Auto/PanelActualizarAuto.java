@@ -4,6 +4,11 @@
  */
 package com.idraGroup.lavadero.view.Auto;
 
+import com.idraGroup.lavadero.controller.AutoController;
+import com.idraGroup.lavadero.model.Auto;
+import java.util.Optional;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
@@ -13,7 +18,13 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
     /**
      * Creates new form PanelActualizarAuto
      */
-    public PanelActualizarAuto() {
+    private final AutoController autoController;
+    private Auto autoEnEdicion;
+    private final PanelListarAuto panelListar;
+
+    public PanelActualizarAuto(AutoController controller, PanelListarAuto panelListar) {
+        this.autoController = controller;
+        this.panelListar = panelListar;
         initComponents();
         ConfigurarGrupoBotones();
     }
@@ -34,17 +45,15 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblNuevoTipo = new javax.swing.JLabel();
-        separatorPatenteActual = new javax.swing.JSeparator();
         lblPatenteActual = new javax.swing.JLabel();
-        inputPatenteActual = new javax.swing.JTextField();
         botonActualizarAuto = new javax.swing.JButton();
         bCamioneta = new javax.swing.JRadioButton();
         bSedan = new javax.swing.JRadioButton();
         bSUV = new javax.swing.JRadioButton();
         bFurgoneta = new javax.swing.JRadioButton();
         lblNuevaPatente = new javax.swing.JLabel();
-        inputNuevaPatente = new javax.swing.JTextField();
-        separatorNuevaPatente = new javax.swing.JSeparator();
+        inputPatenteActual = new javax.swing.JFormattedTextField();
+        inputNuevaPatente = new javax.swing.JFormattedTextField();
 
         pnlActualizarAuto.setBackground(new java.awt.Color(255, 255, 255));
         pnlActualizarAuto.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,30 +76,20 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         lblNuevoTipo.setText("NUEVO TIPO");
         pnlActualizarAuto.add(lblNuevoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
-        separatorPatenteActual.setForeground(new java.awt.Color(0, 0, 0));
-        pnlActualizarAuto.add(separatorPatenteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 340, 10));
-
         lblPatenteActual.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblPatenteActual.setText("PATENTE ACTUAL");
         pnlActualizarAuto.add(lblPatenteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
-        inputPatenteActual.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputPatenteActual.setForeground(new java.awt.Color(204, 204, 204));
-        inputPatenteActual.setText("Ingrese patente del auto a actualizar");
-        inputPatenteActual.setBorder(null);
-        inputPatenteActual.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputPatenteActual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPatenteActualActionPerformed(evt);
-            }
-        });
-        pnlActualizarAuto.add(inputPatenteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 390, -1));
 
         botonActualizarAuto.setBackground(new java.awt.Color(0, 134, 190));
         botonActualizarAuto.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonActualizarAuto.setForeground(new java.awt.Color(255, 255, 255));
         botonActualizarAuto.setText("Guardar");
         botonActualizarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonActualizarAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarAutoActionPerformed(evt);
+            }
+        });
         pnlActualizarAuto.add(botonActualizarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         bCamioneta.setText("Camioneta");
@@ -124,20 +123,19 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         lblNuevaPatente.setText("NUEVA PATENTE");
         pnlActualizarAuto.add(lblNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        inputNuevaPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputNuevaPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputNuevaPatente.setText("Ingrese patente");
-        inputNuevaPatente.setBorder(null);
-        inputNuevaPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputNuevaPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNuevaPatenteActionPerformed(evt);
-            }
-        });
-        pnlActualizarAuto.add(inputNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 390, -1));
+        try {
+            inputPatenteActual.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlActualizarAuto.add(inputPatenteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 340, -1));
 
-        separatorNuevaPatente.setForeground(new java.awt.Color(0, 0, 0));
-        pnlActualizarAuto.add(separatorNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 340, 10));
+        try {
+            inputNuevaPatente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnlActualizarAuto.add(inputNuevaPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -153,10 +151,6 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputPatenteActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPatenteActualActionPerformed
-
     private void bCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCamionetaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCamionetaActionPerformed
@@ -165,21 +159,92 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_bFurgonetaActionPerformed
 
-    private void inputNuevaPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNuevaPatenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNuevaPatenteActionPerformed
-
     private void bSedanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSedanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bSedanActionPerformed
-    private void ConfigurarGrupoBotones(){
-        
+
+    private void botonActualizarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarAutoActionPerformed
+
+        try {
+            String patenteABuscar = inputPatenteActual.getText().trim();
+
+            String nuevaPatente = inputNuevaPatente.getText().trim();
+            String nuevoTipo = obtenerTipoSeleccionado();
+
+            if (patenteABuscar.isEmpty()) {
+                throw new IllegalArgumentException("Ingrese la PATENTE ACTUAL del auto que desea modificar.");
+            }
+            if (nuevaPatente.isEmpty()) {
+                throw new IllegalArgumentException("La NUEVA PATENTE no puede estar vacía.");
+            }
+            if (nuevoTipo.isEmpty()) {
+                throw new IllegalArgumentException("Debe seleccionar el NUEVO TIPO de auto.");
+            }
+
+            Optional<Auto> resultado = autoController.buscarPorPatente(patenteABuscar);
+
+            if (resultado.isPresent()) {
+                this.autoEnEdicion = resultado.get();
+
+                this.autoEnEdicion.setPatente(nuevaPatente);
+                this.autoEnEdicion.setTipo(nuevoTipo);
+
+                autoController.actualizarAuto(this.autoEnEdicion);
+
+                JOptionPane.showMessageDialog(this, "Auto (Patente: " + patenteABuscar + ") actualizado a " + nuevaPatente + " exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                LimpiarInputs();
+
+                panelListar.recargarDatos();
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No se encontró un auto con la patente: " + patenteABuscar + ". No se realizó la actualización.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                LimpiarInputs();
+            }
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validación", JOptionPane.WARNING_MESSAGE);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar: Patente duplicada o error de DB. " + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+
+        this.autoEnEdicion = null;
+    }//GEN-LAST:event_botonActualizarAutoActionPerformed
+    private void ConfigurarGrupoBotones() {
+
         GroupTipoAuto.add(bCamioneta);
         GroupTipoAuto.add(bSedan);
         GroupTipoAuto.add(bSUV);
         GroupTipoAuto.add(bFurgoneta);
 
-}
+    }
+
+    private void LimpiarInputs() {
+        inputNuevaPatente.setText("");
+        inputNuevaPatente.setValue(null);
+        inputPatenteActual.setText("");
+        inputPatenteActual.setValue(null);
+        GroupTipoAuto.clearSelection();
+    }
+
+    private String obtenerTipoSeleccionado() {
+        if (bCamioneta.isSelected()) {
+            return "Camioneta";
+        }
+        if (bSedan.isSelected()) {
+            return "Sedan";
+        }
+        if (bSUV.isSelected()) {
+            return "SUV";
+        }
+        if (bFurgoneta.isSelected()) {
+            return "Furgoneta";
+        }
+        return ""; 
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
@@ -191,14 +256,13 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
     private javax.swing.JRadioButton bSUV;
     private javax.swing.JRadioButton bSedan;
     private javax.swing.JButton botonActualizarAuto;
-    private javax.swing.JTextField inputNuevaPatente;
-    private javax.swing.JTextField inputPatenteActual;
+    private javax.swing.JFormattedTextField inputNuevaPatente;
+    private javax.swing.JFormattedTextField inputPatenteActual;
     private javax.swing.JLabel lblNuevaPatente;
     private javax.swing.JLabel lblNuevoTipo;
     private javax.swing.JLabel lblPatenteActual;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlActualizarAuto;
-    private javax.swing.JSeparator separatorNuevaPatente;
-    private javax.swing.JSeparator separatorPatenteActual;
     // End of variables declaration//GEN-END:variables
+
 }

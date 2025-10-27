@@ -4,6 +4,8 @@
  */
 package com.idraGroup.lavadero.view.reserva;
 
+import com.idraGroup.lavadero.controller.ReservaController;
+
 /**
  *
  * @author LoloColombo
@@ -13,16 +15,24 @@ public class ReservaView extends javax.swing.JPanel {
     /**
      * Creates new form ReservaView
      */
-    public ReservaView() {
+    private final ReservaController reservaController;
+    private final PanelListarReserva panelListarReserva;
+
+    public ReservaView(ReservaController reservaController) {
+        this.reservaController = reservaController;
+        this.panelListarReserva = new PanelListarReserva(reservaController);
         initComponents();
-        PanelAgregarReserva panelAgregarReserva = new PanelAgregarReserva();
-        tabbedPaneReserva.add("CREAR",panelAgregarReserva);
-        PanelActualizarReserva panelActualizarReserva = new PanelActualizarReserva();
-        tabbedPaneReserva.add("ACTUALIZAR",panelActualizarReserva);
-        PanelEliminarReserva panelEliminarReserva = new PanelEliminarReserva();
-        tabbedPaneReserva.add("ELIMINAR",panelEliminarReserva);
-        PanelListarReserva panelListarReserva = new PanelListarReserva();
-        tabbedPaneReserva.add("LISTAR",panelListarReserva);
+
+        PanelAgregarReserva panelAgregarReserva = new PanelAgregarReserva(reservaController, panelListarReserva);
+        tabbedPaneReserva.add("CREAR", panelAgregarReserva);
+
+        PanelActualizarReserva panelActualizarReserva = new PanelActualizarReserva(reservaController, panelListarReserva);
+        tabbedPaneReserva.add("ACTUALIZAR", panelActualizarReserva);
+
+        PanelEliminarReserva panelEliminarReserva = new PanelEliminarReserva(reservaController, panelListarReserva);
+        tabbedPaneReserva.add("ELIMINAR", panelEliminarReserva);
+
+        tabbedPaneReserva.add("LISTAR", panelListarReserva);
     }
 
     /**

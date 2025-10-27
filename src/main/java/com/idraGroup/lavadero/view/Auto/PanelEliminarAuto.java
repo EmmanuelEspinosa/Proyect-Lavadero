@@ -4,6 +4,11 @@
  */
 package com.idraGroup.lavadero.view.Auto;
 
+import com.idraGroup.lavadero.controller.AutoController;
+import com.idraGroup.lavadero.model.Auto;
+import java.util.Optional;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
@@ -13,7 +18,12 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
     /**
      * Creates new form PanelEliminarAuto
      */
-    public PanelEliminarAuto() {
+    private final AutoController autoController;
+    private final PanelListarAuto panelListar;
+
+    public PanelEliminarAuto(AutoController controller, PanelListarAuto panelListar) {
+        this.autoController = controller;
+        this.panelListar = panelListar;
         initComponents();
     }
 
@@ -32,9 +42,8 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         labelPatente = new javax.swing.JLabel();
-        inputPatente = new javax.swing.JTextField();
-        separatorPatente = new javax.swing.JSeparator();
         botonEliminarAuto = new javax.swing.JButton();
+        inputPatenteEliminar = new javax.swing.JFormattedTextField();
 
         pnlEliminarAuto.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarAuto.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,27 +66,29 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         labelPatente.setText("PATENTE");
         pnlEliminarAuto.add(labelPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        inputPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        inputPatente.setForeground(new java.awt.Color(204, 204, 204));
-        inputPatente.setText("Ingrese la patente del auto a eliminar.");
-        inputPatente.setBorder(null);
-        inputPatente.setCaretColor(new java.awt.Color(204, 204, 204));
-        inputPatente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPatenteActionPerformed(evt);
-            }
-        });
-        pnlEliminarAuto.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 390, -1));
-
-        separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
-        pnlEliminarAuto.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
-
         botonEliminarAuto.setBackground(new java.awt.Color(153, 0, 0));
         botonEliminarAuto.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonEliminarAuto.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarAuto.setText("Eliminar");
         botonEliminarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonEliminarAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarAutoActionPerformed(evt);
+            }
+        });
         pnlEliminarAuto.add(botonEliminarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
+
+        try {
+            inputPatenteEliminar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        inputPatenteEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPatenteEliminarActionPerformed(evt);
+            }
+        });
+        pnlEliminarAuto.add(inputPatenteEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,20 +104,72 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteActionPerformed
+    private void inputPatenteEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPatenteEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputPatenteActionPerformed
+    }//GEN-LAST:event_inputPatenteEliminarActionPerformed
 
+    private void botonEliminarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarAutoActionPerformed
+        try {
+            String patenteAEliminar = inputPatenteEliminar.getText().trim();
+            if (patenteAEliminar.isEmpty()) {
+                throw new IllegalArgumentException("Ingrese la PATENTE del auto que desea eliminar.");
+            }
+
+            Optional<Auto> resultado = autoController.buscarPorPatente(patenteAEliminar);
+
+            if (resultado.isPresent()) {
+                Auto autoEliminar = resultado.get();
+
+                int confirmacion = JOptionPane.showConfirmDialog(this,
+                        "¿Está seguro de eliminar el auto con patente: " + patenteAEliminar + "? Esta acción es irreversible.",
+                        "Confirmar Eliminación",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmacion == JOptionPane.YES_OPTION) {
+
+                    autoController.eliminarAuto(autoEliminar.getId());
+
+                    JOptionPane.showMessageDialog(this,
+                            "Auto (Patente: " + patenteAEliminar + ") eliminado exitosamente.",
+                            "Éxito",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    LimpiarInputs();
+                    panelListar.recargarDatos();
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Eliminación cancelada.", "Cancelado", JOptionPane.INFORMATION_MESSAGE);
+                    LimpiarInputs();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No se encontró un auto con la patente: " + patenteAEliminar + ". No se elimino.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                LimpiarInputs();
+            }
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validación", JOptionPane.WARNING_MESSAGE);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al eliminar el auto" + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_botonEliminarAutoActionPerformed
+
+    private void LimpiarInputs() {
+        inputPatenteEliminar.setText("");
+        inputPatenteEliminar.setValue(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JLabel autoSiluetaImg;
     private javax.swing.JButton botonEliminarAuto;
-    private javax.swing.JTextField inputPatente;
+    private javax.swing.JFormattedTextField inputPatenteEliminar;
     private javax.swing.JLabel labelPatente;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlEliminarAuto;
-    private javax.swing.JSeparator separatorPatente;
     // End of variables declaration//GEN-END:variables
 }
