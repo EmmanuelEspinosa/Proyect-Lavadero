@@ -16,6 +16,13 @@ import com.idraGroup.lavadero.dao.jdbc.ReservaDAOJDBC;
 import com.idraGroup.lavadero.view.Auto.AutoView;
 import com.idraGroup.lavadero.view.cliente.ClienteView;
 import com.idraGroup.lavadero.view.reserva.ReservaView;
+/**
+ * Class <code>Main</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/view/Main.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.view</code>
+ * </p>
+ */
 
 
 
@@ -106,6 +113,10 @@ public class Main extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+/**
+ * run.
+
+ */
             public void run() {
                 new Main().setVisible(true);
             }

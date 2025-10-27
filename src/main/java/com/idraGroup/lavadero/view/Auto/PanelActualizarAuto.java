@@ -86,6 +86,11 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
         botonActualizarAuto.setText("Guardar");
         botonActualizarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonActualizarAuto.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActualizarAutoActionPerformed(evt);
             }
@@ -94,6 +99,11 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
 
         bCamioneta.setText("Camioneta");
         bCamioneta.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCamionetaActionPerformed(evt);
             }
@@ -102,6 +112,11 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
 
         bSedan.setText("Sedan");
         bSedan.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bSedanActionPerformed(evt);
             }
@@ -113,6 +128,11 @@ public class PanelActualizarAuto extends javax.swing.JPanel {
 
         bFurgoneta.setText("Furgoneta");
         bFurgoneta.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bFurgonetaActionPerformed(evt);
             }

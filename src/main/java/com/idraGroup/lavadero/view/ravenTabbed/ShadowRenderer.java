@@ -7,6 +7,13 @@ import java.awt.Shape;
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
+/**
+ * Class <code>ShadowRenderer</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/view/ravenTabbed/ShadowRenderer.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.view.ravenTabbed</code>
+ * </p>
+ */
 
 public class ShadowRenderer {
 
@@ -23,18 +30,39 @@ public class ShadowRenderer {
         this.opacity = opacity;
         this.color = color;
     }
+/**
+ * getColor.
+
+ * @return Color.
+ */
 
     public Color getColor() {
         return color;
     }
+/**
+ * getOpacity.
+
+ * @return float.
+ */
 
     public float getOpacity() {
         return opacity;
     }
+/**
+ * getSize.
+
+ * @return int.
+ */
 
     public int getSize() {
         return size;
     }
+/**
+ * createShadow.
+ * @param shape Shape.
+
+ * @return BufferedImage.
+ */
 
     public BufferedImage createShadow(Shape shape) {
         Rectangle rec = shape.getBounds();
@@ -46,6 +74,12 @@ public class ShadowRenderer {
         g2.dispose();
         return createShadow(img);
     }
+/**
+ * createShadow.
+ * @param image BufferedImage.
+
+ * @return BufferedImage.
+ */
 
     public BufferedImage createShadow(final BufferedImage image) {
         int shadowSize = size * 2;

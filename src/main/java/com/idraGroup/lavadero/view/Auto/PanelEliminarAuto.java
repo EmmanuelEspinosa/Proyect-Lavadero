@@ -72,6 +72,11 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
         botonEliminarAuto.setText("Eliminar");
         botonEliminarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEliminarAuto.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarAutoActionPerformed(evt);
             }
@@ -84,6 +89,11 @@ public class PanelEliminarAuto extends javax.swing.JPanel {
             ex.printStackTrace();
         }
         inputPatenteEliminar.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputPatenteEliminarActionPerformed(evt);
             }

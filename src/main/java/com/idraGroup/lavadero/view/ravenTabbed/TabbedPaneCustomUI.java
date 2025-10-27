@@ -26,25 +26,66 @@ public class TabbedPaneCustomUI extends BasicTabbedPaneUI {
     public TabbedPaneCustomUI(TabbedPaneCustom tab) {
         this.tab = tab;
     }
+/**
+ * installDefaults.
+
+ */
 
     @Override
     protected void installDefaults() {
         super.installDefaults();
     }
+/**
+ * getTabInsets.
+ * @param tabPlacement int.
+ * @param tabIndex int.
+
+ * @return Insets.
+ */
 
     @Override
     protected Insets getTabInsets(int tabPlacement, int tabIndex) {
         return new Insets(5, 30, 5, 30);
     }
+/**
+ * paintTabBorder.
+ * @param g Graphics.
+ * @param tabPlacement int.
+ * @param tabIndex int.
+ * @param x int.
+ * @param y int.
+ * @param width int.
+ * @param height int.
+ * @param isSelected boolean.
+
+ */
 
     @Override
     protected void paintTabBorder(Graphics g, int tabPlacement, int tabIndex, int x, int y, int width, int height, boolean isSelected) {
 
     }
+/**
+ * paintFocusIndicator.
+ * @param g Graphics.
+ * @param tabPlacement int.
+ * @param rects Rectangle[].
+ * @param tabIndex int.
+ * @param iconRect Rectangle.
+ * @param textRect Rectangle.
+ * @param isSelected boolean.
+
+ */
 
     @Override
     protected void paintFocusIndicator(Graphics g, int tabPlacement, Rectangle[] rects, int tabIndex, Rectangle iconRect, Rectangle textRect, boolean isSelected) {
     }
+/**
+ * paintTabArea.
+ * @param g Graphics.
+ * @param tabPlacement int.
+ * @param selectedIndex int.
+
+ */
 
     @Override
     protected void paintTabArea(Graphics g, int tabPlacement, int selectedIndex) {
@@ -59,6 +100,13 @@ public class TabbedPaneCustomUI extends BasicTabbedPaneUI {
         g2.dispose();
         super.paintTabArea(g, tabPlacement, selectedIndex);
     }
+/**
+ * paintTabBackground.
+ * @param g2 Graphics2D.
+ * @param index int.
+ * @param selected boolean.
+
+ */
 
     protected void paintTabBackground(Graphics2D g2, int index, boolean selected) {
         Rectangle rec = getTabBounds(tabPane, index);
@@ -68,6 +116,13 @@ public class TabbedPaneCustomUI extends BasicTabbedPaneUI {
         g2.drawImage(new ShadowRenderer(6, 0.8f, new Color(50, 50, 50)).createShadow(shape), rec.x, rec.y, null);
         g2.fill(shape);
     }
+/**
+ * paintContentBorder.
+ * @param g Graphics.
+ * @param tabPlacement int.
+ * @param selectedIndex int.
+
+ */
 
     @Override
     protected void paintContentBorder(Graphics g, int tabPlacement, int selectedIndex) {

@@ -6,6 +6,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/**
+ * Class <code>ClienteDAOJDBC</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/dao/jdbc/ClienteDaoJdbc.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.dao.jdbc</code>
+ * </p>
+ */
 
 public class ClienteDAOJDBC implements ClienteDao {
     
@@ -29,6 +36,12 @@ public class ClienteDAOJDBC implements ClienteDao {
         cliente.setTelefono(rs.getString("telefono"));
         return cliente;
     }
+/**
+ * create.
+ * @param cliente Cliente.
+
+ * @return Cliente.
+ */
     
     @Override
     public Cliente create(Cliente cliente) {
@@ -57,6 +70,12 @@ public class ClienteDAOJDBC implements ClienteDao {
             throw new RuntimeException("Error al crear cliente: " + e.getMessage(), e);
         }
     }
+/**
+ * findById.
+ * @param id Integer.
+
+ * @return Optional<Cliente>.
+ */
 
     @Override
     public Optional<Cliente> findById(Integer id) {
@@ -75,6 +94,11 @@ public class ClienteDAOJDBC implements ClienteDao {
         }
         return Optional.empty();
     }
+/**
+ * findAll.
+
+ * @return List<Cliente>.
+ */
     
 
     @Override
@@ -92,6 +116,12 @@ public class ClienteDAOJDBC implements ClienteDao {
         }
         return clientes;
     }
+/**
+ * update.
+ * @param cliente Cliente.
+
+ * @return Cliente.
+ */
     
 
     @Override
@@ -110,6 +140,12 @@ public class ClienteDAOJDBC implements ClienteDao {
             throw new RuntimeException("Error al actualizar cliente: " + e.getMessage(), e);
         }
     }
+/**
+ * deleteById.
+ * @param id Integer.
+
+ * @return boolean.
+ */
 
     @Override
     public boolean deleteById(Integer id) {
@@ -122,6 +158,12 @@ public class ClienteDAOJDBC implements ClienteDao {
             throw new RuntimeException("Error al eliminar cliente por ID: " + e.getMessage(), e);
         }
     }
+/**
+ * findByDni.
+ * @param dni String.
+
+ * @return Optional<Cliente>.
+ */
 
 
     @Override

@@ -88,6 +88,11 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         botonGuardarReserva.setText("Guardar");
         botonGuardarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonGuardarReserva.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarReservaActionPerformed(evt);
             }
@@ -96,6 +101,11 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
 
         bPremium.setText("PREMIUM");
         bPremium.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPremiumActionPerformed(evt);
             }
@@ -107,6 +117,11 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
 
         bDeluxe.setText("DELUXE");
         bDeluxe.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDeluxeActionPerformed(evt);
             }

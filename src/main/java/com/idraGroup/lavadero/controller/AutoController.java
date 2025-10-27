@@ -4,6 +4,13 @@ import com.idraGroup.lavadero.dao.AutoDao;
 import com.idraGroup.lavadero.model.Auto;
 import java.util.List;
 import java.util.Optional;
+/**
+ * Class <code>AutoController</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/controller/AutoController.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.controller</code>
+ * </p>
+ */
 
 public class AutoController {
 
@@ -12,6 +19,12 @@ public class AutoController {
     public AutoController(AutoDao autoDao) {
         this.autoDao = autoDao;
     }
+/**
+ * guardarAuto.
+ * @param auto Auto.
+
+ * @return Auto.
+ */
 
     public Auto guardarAuto(Auto auto) {
         if (auto.getPatente() == null || auto.getPatente().isBlank()) {
@@ -22,22 +35,51 @@ public class AutoController {
         }
         return autoDao.create(auto);
     }
+/**
+ * listarTodos.
+
+ * @return List<Auto>.
+ */
 
     public List<Auto> listarTodos() {
         return autoDao.findAll();
     }
+/**
+ * buscarPorPatente.
+ * @param patente String.
+
+ * @return Optional<Auto>.
+ */
 
     public Optional<Auto> buscarPorPatente(String patente) {
         return autoDao.findByPatente(patente);
     }
+/**
+ * buscarPorId.
+ * @param id Integer.
+
+ * @return Optional<Auto>.
+ */
 
     public Optional<Auto> buscarPorId(Integer id) {
         return autoDao.findById(id);
     }
+/**
+ * actualizarAuto.
+ * @param auto Auto.
+
+ * @return Auto.
+ */
 
     public Auto actualizarAuto(Auto auto) {
         return autoDao.update(auto);
     }
+/**
+ * eliminarAuto.
+ * @param id Integer.
+
+ * @return boolean.
+ */
 
     public boolean eliminarAuto(Integer id) {
         return autoDao.deleteById(id);

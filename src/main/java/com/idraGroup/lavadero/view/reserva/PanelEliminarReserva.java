@@ -69,6 +69,11 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
         botonEliminarReserva.setText("Eliminar");
         botonEliminarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEliminarReserva.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarReservaActionPerformed(evt);
             }
@@ -77,6 +82,11 @@ public class PanelEliminarReserva extends javax.swing.JPanel {
 
         inputIdReserva.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         inputIdReserva.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputIdReservaActionPerformed(evt);
             }

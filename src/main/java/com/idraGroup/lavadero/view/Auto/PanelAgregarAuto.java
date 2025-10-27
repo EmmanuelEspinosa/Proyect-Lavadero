@@ -82,6 +82,11 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         botonGuardarAuto.setText("Guardar");
         botonGuardarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonGuardarAuto.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarAutoActionPerformed(evt);
             }
@@ -90,6 +95,11 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
 
         bCamioneta.setText("Camioneta");
         bCamioneta.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCamionetaActionPerformed(evt);
             }
@@ -104,6 +114,11 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
 
         bFurgoneta.setText("Furgoneta");
         bFurgoneta.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bFurgonetaActionPerformed(evt);
             }

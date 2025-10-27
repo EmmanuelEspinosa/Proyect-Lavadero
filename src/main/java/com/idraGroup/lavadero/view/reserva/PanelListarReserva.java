@@ -24,6 +24,10 @@ public class PanelListarReserva extends javax.swing.JPanel {
         initComponents();
         cargarReservas();
     }
+/**
+ * cargarReservas.
+
+ */
 
     public void cargarReservas() {
        
@@ -54,6 +58,10 @@ public class PanelListarReserva extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
+/**
+ * recargarDatos.
+
+ */
     
     public void recargarDatos(){
         cargarReservas();
@@ -103,6 +111,13 @@ public class PanelListarReserva extends javax.swing.JPanel {
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
             };
+/**
+ * isCellEditable.
+ * @param rowIndex int.
+ * @param columnIndex int.
+
+ * @return boolean.
+ */
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];

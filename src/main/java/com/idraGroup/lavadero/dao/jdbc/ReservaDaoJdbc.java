@@ -7,6 +7,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/**
+ * Class <code>ReservaDAOJDBC</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/dao/jdbc/ReservaDaoJdbc.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.dao.jdbc</code>
+ * </p>
+ */
 
 public class ReservaDAOJDBC implements ReservaDao {
 
@@ -31,6 +38,12 @@ public class ReservaDAOJDBC implements ReservaDao {
         reserva.setPrecio(rs.getDouble("precio"));
         return reserva;
     }
+/**
+ * create.
+ * @param reserva Reserva.
+
+ * @return Reserva.
+ */
 
 
     @Override
@@ -65,6 +78,12 @@ public class ReservaDAOJDBC implements ReservaDao {
             throw new RuntimeException("Error al crear la reserva. Revise IDs o formato de datos. Detalle: " + e.getMessage(), e);
         }
     }
+/**
+ * findById.
+ * @param id Integer.
+
+ * @return Optional<Reserva>.
+ */
 
     @Override
     public Optional<Reserva> findById(Integer id) {
@@ -83,6 +102,11 @@ public class ReservaDAOJDBC implements ReservaDao {
         }
         return Optional.empty();
     }
+/**
+ * findAll.
+
+ * @return List<Reserva>.
+ */
     
 
     @Override
@@ -100,6 +124,12 @@ public class ReservaDAOJDBC implements ReservaDao {
         }
         return reservas;
     }
+/**
+ * update.
+ * @param reserva Reserva.
+
+ * @return Reserva.
+ */
 
     @Override
     public Reserva update(Reserva reserva) {
@@ -119,6 +149,12 @@ public class ReservaDAOJDBC implements ReservaDao {
             throw new RuntimeException("Error al actualizar reserva: " + e.getMessage(), e);
         }
     }
+/**
+ * deleteById.
+ * @param id Integer.
+
+ * @return boolean.
+ */
     
 
     @Override
@@ -132,6 +168,12 @@ public class ReservaDAOJDBC implements ReservaDao {
             throw new RuntimeException("Error al eliminar reserva por ID: " + e.getMessage(), e);
         }
     }
+/**
+ * findByTurno.
+ * @param turno LocalDateTime.
+
+ * @return Optional<Reserva>.
+ */
     
     @Override
     public Optional<Reserva> findByTurno(LocalDateTime turno) {
