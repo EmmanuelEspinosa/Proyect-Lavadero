@@ -9,6 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/**
+ * Class <code>AutoDAOJDBC</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/dao/jdbc/AutoDaoJdbc.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.dao.jdbc</code>
+ * </p>
+ */
 
 public class AutoDAOJDBC implements AutoDao {
 
@@ -27,6 +34,12 @@ public class AutoDAOJDBC implements AutoDao {
         auto.setTipo(rs.getString("tipo"));
         return auto;
     }
+/**
+ * create.
+ * @param a Auto.
+
+ * @return Auto.
+ */
 
     @Override
     public Auto create(Auto a) {
@@ -49,6 +62,12 @@ public class AutoDAOJDBC implements AutoDao {
             throw new RuntimeException("Error al guardar el auto en la base de datos.", e);
         }
     }
+/**
+ * findById.
+ * @param id Integer.
+
+ * @return Optional<Auto>.
+ */
 
     @Override
     public Optional<Auto> findById(Integer id) {
@@ -67,6 +86,11 @@ public class AutoDAOJDBC implements AutoDao {
         }
         return Optional.empty();
     }
+/**
+ * findAll.
+
+ * @return List<Auto>.
+ */
 
     @Override
     public List<Auto> findAll() {
@@ -83,6 +107,12 @@ public class AutoDAOJDBC implements AutoDao {
         }
         return autos;
     }
+/**
+ * update.
+ * @param a Auto.
+
+ * @return Auto.
+ */
 
     @Override
     public Auto update(Auto a) {
@@ -104,6 +134,12 @@ public class AutoDAOJDBC implements AutoDao {
             throw new RuntimeException("Error al actualizar el auto en la base de datos.", e);
         }
     }
+/**
+ * deleteById.
+ * @param id Integer.
+
+ * @return boolean.
+ */
 
     @Override
     public boolean deleteById(Integer id) {
@@ -117,6 +153,12 @@ public class AutoDAOJDBC implements AutoDao {
             throw new RuntimeException("Error al eliminar el auto de la base de datos.", e);
         }
     }
+/**
+ * findByPatente.
+ * @param patente String.
+
+ * @return Optional<Auto>.
+ */
     
     @Override
     public Optional<Auto> findByPatente(String patente){

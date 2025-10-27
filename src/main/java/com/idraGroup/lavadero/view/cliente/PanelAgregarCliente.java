@@ -80,6 +80,11 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         botonGuardarCliente.setText("Guardar");
         botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarClienteActionPerformed(evt);
             }

@@ -9,6 +9,13 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
+/**
+ * Class <code>ReservaController</code> del proyecto Lavadero.
+ * <p>
+ * Archivo: <code>com/idraGroup/lavadero/controller/ReservaController.java</code>
+ * Paquete: <code>com.idraGroup.lavadero.controller</code>
+ * </p>
+ */
 
 public class ReservaController {
 
@@ -22,6 +29,15 @@ public class ReservaController {
         this.clienteController = clienteController;
         this.autoController = autoController;
     }
+/**
+ * crearReserva.
+ * @param dni String.
+ * @param patente String.
+ * @param turnoStr String.
+ * @param tipoLavado String.
+
+ * @return Reserva.
+ */
 
     public Reserva crearReserva(String dni, String patente, String turnoStr, String tipoLavado) {
 
@@ -58,6 +74,11 @@ public class ReservaController {
 
         return reservaDao.create(nuevaReserva);
     }
+/**
+ * listarReservas.
+
+ * @return List<Reserva>.
+ */
 
     public List<Reserva> listarReservas() {
         List<Reserva> reservasConIds = reservaDao.findAll();
@@ -74,10 +95,26 @@ public class ReservaController {
 
         return reservasConIds;
     }
+/**
+ * buscarPorId.
+ * @param id int.
+
+ * @return Optional<Reserva>.
+ */
 
     public Optional<Reserva> buscarPorId(int id) {
         return reservaDao.findById(id);
     }
+/**
+ * actualizarReserva.
+ * @param idReserva Integer.
+ * @param dni String.
+ * @param patente String.
+ * @param turnoStr String.
+ * @param tipoLavado String.
+
+ * @return Reserva.
+ */
 
     public Reserva actualizarReserva(Integer idReserva, String dni, String patente, String turnoStr, String tipoLavado) {
         LocalDateTime nuevoTurno;
@@ -127,10 +164,22 @@ public class ReservaController {
        
         return reservaDao.update(reservaActualizar);
     }
+/**
+ * eliminarReserva.
+ * @param id Integer.
+
+ * @return boolean.
+ */
 
     public boolean eliminarReserva(Integer id) {
         return reservaDao.deleteById(id);
     }
+/**
+ * calcularPrecio.
+ * @param tipoLavado String.
+
+ * @return double.
+ */
 
     public double calcularPrecio(String tipoLavado) {
         return switch (tipoLavado.toUpperCase()) {

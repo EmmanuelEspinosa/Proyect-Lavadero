@@ -84,6 +84,11 @@ public class PanelActualizarCliente extends javax.swing.JPanel {
         botonActualizarCliente.setText("Guardar");
         botonActualizarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonActualizarCliente.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActualizarClienteActionPerformed(evt);
             }

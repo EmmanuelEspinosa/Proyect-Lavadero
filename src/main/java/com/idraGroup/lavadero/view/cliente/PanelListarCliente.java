@@ -23,6 +23,10 @@ public class PanelListarCliente extends javax.swing.JPanel {
         initComponents();
         cargarClientes();
     }
+/**
+ * cargarClientes.
+
+ */
 
      public void cargarClientes() {
        
@@ -48,6 +52,10 @@ public class PanelListarCliente extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
+/**
+ * recargarDatos.
+
+ */
     
     public void recargarDatos(){
         cargarClientes();

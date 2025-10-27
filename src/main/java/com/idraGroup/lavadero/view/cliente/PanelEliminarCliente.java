@@ -69,6 +69,11 @@ public class PanelEliminarCliente extends javax.swing.JPanel {
         botonEliminarCliente.setText("Eliminar");
         botonEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarClienteActionPerformed(evt);
             }

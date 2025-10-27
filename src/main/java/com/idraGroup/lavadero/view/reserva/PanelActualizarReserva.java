@@ -92,6 +92,11 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
         botonActualizarReserva.setText("Guardar");
         botonActualizarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonActualizarReserva.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActualizarReservaActionPerformed(evt);
             }
@@ -100,6 +105,11 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
 
         bPremium.setText("PREMIUM");
         bPremium.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPremiumActionPerformed(evt);
             }
@@ -111,6 +121,11 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
 
         bDeluxe.setText("DELUXE");
         bDeluxe.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDeluxeActionPerformed(evt);
             }
@@ -148,6 +163,11 @@ public class PanelActualizarReserva extends javax.swing.JPanel {
 
         inputIdReserva.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         inputIdReserva.addActionListener(new java.awt.event.ActionListener() {
+/**
+ * actionPerformed.
+ * @param evt java.awt.event.ActionEvent.
+
+ */
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputIdReservaActionPerformed(evt);
             }

@@ -17,10 +17,20 @@ public class TabbedPaneCustom extends JTabbedPane {
         this.selectedColor = selectedColor;
         repaint();
     }
+/**
+ * getUnselectedColor.
+
+ * @return Color.
+ */
 
     public Color getUnselectedColor() {
         return unselectedColor;
     }
+/**
+ * setUnselectedColor.
+ * @param unselectedColor Color.
+
+ */
 
     public void setUnselectedColor(Color unselectedColor) {
         this.unselectedColor = unselectedColor;

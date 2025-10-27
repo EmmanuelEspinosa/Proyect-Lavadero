@@ -25,6 +25,10 @@ public class PanelListarAuto extends javax.swing.JPanel {
         initComponents();
         cargarAutos();
     }
+/**
+ * cargarAutos.
+
+ */
     
     public void cargarAutos() {
        
@@ -51,6 +55,10 @@ public class PanelListarAuto extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
+/**
+ * recargarDatos.
+
+ */
     
     public void recargarDatos(){
         cargarAutos();
@@ -101,6 +109,13 @@ public class PanelListarAuto extends javax.swing.JPanel {
             boolean[] canEdit = new boolean [] {
                 false, false, false
             };
+/**
+ * isCellEditable.
+ * @param rowIndex int.
+ * @param columnIndex int.
+
+ * @return boolean.
+ */
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
