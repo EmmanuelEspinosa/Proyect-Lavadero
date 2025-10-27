@@ -2,9 +2,9 @@
 package com.idraGroup.lavadero.dao.jdbc;
 import java.sql.*;
 public class dbConnection {
-    private static String URL = "jdbc:mysql://localhost:3306/reservas_lavadero";
-    private static String USER = "root";
-    private static String PASSWORD = "72517";
+    private static final String URL = "jdbc:mysql://localhost:3306/reservas_lavadero";
+    private static final String USER = "root";
+    private static final String PASSWORD = "72517";
     
     public static Connection conectar(){
         Connection con= null;

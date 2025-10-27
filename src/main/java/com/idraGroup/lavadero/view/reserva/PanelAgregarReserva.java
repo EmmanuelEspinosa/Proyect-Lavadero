@@ -4,18 +4,30 @@
  */
 package com.idraGroup.lavadero.view.reserva;
 
+import com.idraGroup.lavadero.controller.ReservaController;
+import com.idraGroup.lavadero.model.Reserva;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import javax.swing.text.DateFormatter;
+import javax.swing.text.DefaultFormatterFactory;
+
 /**
  *
  * @author LoloColombo
  */
 public class PanelAgregarReserva extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelAgregarReserva
-     */
-    public PanelAgregarReserva() {
+    private final ReservaController reservaController;
+    private final PanelListarReserva panelListarReserva;
+
+    public PanelAgregarReserva(ReservaController reservaController, PanelListarReserva panelListarReserva) {
+        this.reservaController = reservaController;
+        this.panelListarReserva = panelListarReserva;
         initComponents();
         ConfigurarGrupoBotones();
+        configurarInputTurno();
     }
 
     /**
@@ -34,19 +46,16 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblLavado = new javax.swing.JLabel();
-        separatorDni = new javax.swing.JSeparator();
         lblDni = new javax.swing.JLabel();
         botonGuardarReserva = new javax.swing.JButton();
         bPremium = new javax.swing.JRadioButton();
         bStandard = new javax.swing.JRadioButton();
         bDeluxe = new javax.swing.JRadioButton();
         lblTurno = new javax.swing.JLabel();
-        separatorTurno = new javax.swing.JSeparator();
         lblPatente = new javax.swing.JLabel();
-        separatorPatente = new javax.swing.JSeparator();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        inputDni = new javax.swing.JFormattedTextField();
+        inputPatente = new javax.swing.JFormattedTextField();
+        inputTurno = new javax.swing.JFormattedTextField();
 
         pnlAgregarReserva.setBackground(new java.awt.Color(255, 255, 255));
         pnlAgregarReserva.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,9 +78,6 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         lblLavado.setText("TIPO LAVADO");
         pnlAgregarReserva.add(lblLavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
-        separatorDni.setForeground(new java.awt.Color(0, 0, 0));
-        pnlAgregarReserva.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 10));
-
         lblDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblDni.setText("DNI");
         pnlAgregarReserva.add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
@@ -81,6 +87,11 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         botonGuardarReserva.setForeground(new java.awt.Color(255, 255, 255));
         botonGuardarReserva.setText("Guardar");
         botonGuardarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonGuardarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarReservaActionPerformed(evt);
+            }
+        });
         pnlAgregarReserva.add(botonGuardarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         bPremium.setText("PREMIUM");
@@ -106,32 +117,26 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
         lblTurno.setText("TURNO");
         pnlAgregarReserva.add(lblTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        separatorTurno.setForeground(new java.awt.Color(0, 0, 0));
-        pnlAgregarReserva.add(separatorTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 10));
-
         lblPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblPatente.setText("PATENTE");
         pnlAgregarReserva.add(lblPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
-        pnlAgregarReserva.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, 10));
-
-        jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        pnlAgregarReserva.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 340, -1));
-
         try {
-            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+            inputDni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlAgregarReserva.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 340, -1));
+        pnlAgregarReserva.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 340, -1));
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+            inputPatente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlAgregarReserva.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
+        pnlAgregarReserva.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 340, -1));
+
+        inputTurno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"))));
+        pnlAgregarReserva.add(inputTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -154,13 +159,91 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private void bDeluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeluxeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bDeluxeActionPerformed
-    private void ConfigurarGrupoBotones(){
-        
+
+    private void botonGuardarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarReservaActionPerformed
+        String dni = inputDni.getText().trim();
+        String patente = inputPatente.getText().trim().toUpperCase();
+        String turnoStr = inputTurno.getText().trim();
+        String tipoLavado = obtenerTipoSeleccionado();
+
+        try {
+            if (dni.isEmpty() || patente.isEmpty() || turnoStr.isEmpty() || tipoLavado == null || tipoLavado.isEmpty()) {
+                throw new IllegalArgumentException("Todos los campos (DNI, Patente, Turno, Tipo Lavado) son obligatorios.");
+            }
+
+            Reserva nuevaReserva = reservaController.crearReserva(
+                    dni,
+                    patente,
+                    turnoStr,
+                    tipoLavado
+            );
+
+            JOptionPane.showMessageDialog(this,
+                    "Reserva N°" + nuevaReserva.getId() + " creada exitosamente para el cliente con DNI: " + dni,
+                    "Éxito al Registrar Reserva",
+                    JOptionPane.INFORMATION_MESSAGE);
+
+            limpiarInputs();
+            panelListarReserva.recargarDatos();
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error de Validación", JOptionPane.WARNING_MESSAGE);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this,
+                    "Error al intentar guardar la reserva en el sistema. Detalle: " + e.getMessage(),
+                    "Error de Persistencia",
+                    JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_botonGuardarReservaActionPerformed
+    private void ConfigurarGrupoBotones() {
+
         GroupTipoLavado.add(bDeluxe);
         GroupTipoLavado.add(bPremium);
         GroupTipoLavado.add(bStandard);
+    }
 
-}
+    private void configurarInputTurno() {
+        try {
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            DateTimeFormatter controllerFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+            dateFormat.setLenient(false);
+            DateFormatter dateFormatter = new DateFormatter(dateFormat);
+            inputTurno.setFormatterFactory(new DefaultFormatterFactory(dateFormatter));
+
+            inputTurno.setFocusLostBehavior(javax.swing.JFormattedTextField.COMMIT);
+
+            String horaActual = LocalDateTime.now().format(controllerFormatter);
+            inputTurno.setText(horaActual);
+
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error al configurar el formato de fecha: " + e.getMessage());
+        }
+    }
+
+    private void limpiarInputs() {
+        inputDni.setText("");
+        inputPatente.setText("");
+        inputDni.setValue(null);
+        inputPatente.setValue(null);
+        GroupTipoLavado.clearSelection();
+
+    }
+
+    private String obtenerTipoSeleccionado() {
+        if (bStandard.isSelected()) {
+            return "STANDARD";
+        }
+        if (bPremium.isSelected()) {
+            return "PREMIUM";
+        }
+        if (bDeluxe.isSelected()) {
+            return "DELUXE";
+        }
+        return "";
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
@@ -170,9 +253,9 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private javax.swing.JRadioButton bPremium;
     private javax.swing.JRadioButton bStandard;
     private javax.swing.JButton botonGuardarReserva;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
+    private javax.swing.JFormattedTextField inputDni;
+    private javax.swing.JFormattedTextField inputPatente;
+    private javax.swing.JFormattedTextField inputTurno;
     private javax.swing.JLabel lblDni;
     private javax.swing.JLabel lblLavado;
     private javax.swing.JLabel lblPatente;
@@ -180,8 +263,5 @@ public class PanelAgregarReserva extends javax.swing.JPanel {
     private javax.swing.JLabel lblTurno;
     private javax.swing.JPanel pnlAgregarReserva;
     private javax.swing.JLabel reservaSiluetaImg;
-    private javax.swing.JSeparator separatorDni;
-    private javax.swing.JSeparator separatorPatente;
-    private javax.swing.JSeparator separatorTurno;
     // End of variables declaration//GEN-END:variables
 }

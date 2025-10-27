@@ -4,7 +4,8 @@
  */
 package com.idraGroup.lavadero.view.Auto;
 
-import com.idraGroup.lavadero.view.cliente.PanelAgregarCliente;
+import com.idraGroup.lavadero.controller.AutoController;
+
 
 /**
  *
@@ -15,15 +16,22 @@ public class AutoView extends javax.swing.JPanel {
     /**
      * Creates new form AutoView
      */
-    public AutoView() {
+    private final AutoController autoController;
+    private final PanelListarAuto panelListarAuto;
+    public AutoView(AutoController controller) {
+        this.autoController = controller;
+        this.panelListarAuto = new PanelListarAuto(this.autoController);
         initComponents();
-        PanelAgregarAuto panelAgregarAuto = new PanelAgregarAuto();
+        
+        PanelAgregarAuto panelAgregarAuto = new PanelAgregarAuto(autoController, panelListarAuto);
         tabbedPaneAuto.addTab("CREAR",panelAgregarAuto);
-        PanelActualizarAuto panelActualizarAuto = new PanelActualizarAuto();
+        
+        PanelActualizarAuto panelActualizarAuto = new PanelActualizarAuto(autoController, panelListarAuto);
         tabbedPaneAuto.addTab("ACTUALIZAR",panelActualizarAuto);
-        PanelEliminarAuto panelEliminarAuto = new PanelEliminarAuto();
+        
+        PanelEliminarAuto panelEliminarAuto = new PanelEliminarAuto(autoController, panelListarAuto);
         tabbedPaneAuto.addTab("ELIMINAR",panelEliminarAuto);
-        PanelListarAuto panelListarAuto = new PanelListarAuto();
+        
         tabbedPaneAuto.addTab("LISTAR",panelListarAuto);
 
     }

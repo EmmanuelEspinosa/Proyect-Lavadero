@@ -4,6 +4,12 @@
  */
 package com.idraGroup.lavadero.view.Auto;
 
+import com.idraGroup.lavadero.controller.AutoController;
+import com.idraGroup.lavadero.model.Auto;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author LoloColombo
@@ -13,8 +19,41 @@ public class PanelListarAuto extends javax.swing.JPanel {
     /**
      * Creates new form PanelListarAuto
      */
-    public PanelListarAuto() {
+    private final AutoController autoController;
+    public PanelListarAuto(AutoController controller) {
+        this.autoController = controller;
         initComponents();
+        cargarAutos();
+    }
+    
+    public void cargarAutos() {
+       
+        DefaultTableModel model = (DefaultTableModel) tblAutos.getModel();
+     
+        model.setRowCount(0); 
+
+        try {
+           
+            List<Auto> listaAutos = autoController.listarTodos();
+
+            for (Auto auto : listaAutos) {
+                model.addRow(new Object[]{
+                    auto.getId(),
+                    auto.getPatente(),
+                    auto.getTipo()
+                });
+            }
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this,
+                    "Error al cargar los autos desde la base de datos: " + e.getMessage(),
+                    "Error de Persistencia",
+                    JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }
+    
+    public void recargarDatos(){
+        cargarAutos();
     }
 
     /**

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Auto {
 
-    private int id;
+    private Integer id;
     private String patente;
     private String tipo;
 
@@ -13,18 +13,18 @@ public class Auto {
     }
 
     // Constructor completo
-    public Auto(int id, String patente, String tipo) {
+    public Auto(Integer id, String patente, String tipo) {
         this.id = id;
         this.patente = patente;
         this.tipo = tipo;
     }
 
     // --- Getters y Setters ---
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

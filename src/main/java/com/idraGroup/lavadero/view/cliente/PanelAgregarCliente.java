@@ -4,16 +4,22 @@
  */
 package com.idraGroup.lavadero.view.cliente;
 
+import com.idraGroup.lavadero.controller.ClienteController;
+import com.idraGroup.lavadero.model.Cliente;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
  */
 public class PanelAgregarCliente extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelAgregarCliente
-     */
-    public PanelAgregarCliente() {
+    private final ClienteController clienteController;
+    private final PanelListarCliente panelListarCliente;
+
+    public PanelAgregarCliente(ClienteController clienteController, PanelListarCliente panelListarCliente) {
+        this.clienteController = clienteController;
+        this.panelListarCliente = panelListarCliente;
         initComponents();
     }
 
@@ -32,15 +38,12 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblDni = new javax.swing.JLabel();
-        separatorNombre = new javax.swing.JSeparator();
         lblNombre = new javax.swing.JLabel();
-        separatorDni = new javax.swing.JSeparator();
         labelTelefono = new javax.swing.JLabel();
-        separatorTelefono = new javax.swing.JSeparator();
         botonGuardarCliente = new javax.swing.JButton();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        inputDni = new javax.swing.JFormattedTextField();
+        inputNombre = new javax.swing.JTextField();
+        inputTelefono = new javax.swing.JFormattedTextField();
 
         pnlAgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
         pnlAgregarCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,44 +66,40 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         lblDni.setText("DNI");
         pnlAgregarCliente.add(lblDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
-        pnlAgregarCliente.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, -1));
-
         lblNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblNombre.setText("NOMBRE");
         pnlAgregarCliente.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        separatorDni.setForeground(new java.awt.Color(0, 0, 0));
-        pnlAgregarCliente.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, -1));
-
         labelTelefono.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         labelTelefono.setText("TELEFONO");
         pnlAgregarCliente.add(labelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
-
-        separatorTelefono.setForeground(new java.awt.Color(0, 0, 0));
-        pnlAgregarCliente.add(separatorTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 340, -1));
 
         botonGuardarCliente.setBackground(new java.awt.Color(0, 134, 190));
         botonGuardarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
         botonGuardarCliente.setText("Guardar");
         botonGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarClienteActionPerformed(evt);
+            }
+        });
         pnlAgregarCliente.add(botonGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+            inputDni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlAgregarCliente.add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
-        pnlAgregarCliente.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
+        pnlAgregarCliente.add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
+        pnlAgregarCliente.add(inputNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
 
         try {
-            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
+            inputTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlAgregarCliente.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 340, -1));
+        pnlAgregarCliente.add(inputTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -116,22 +115,65 @@ public class PanelAgregarCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarClienteActionPerformed
+        try {
+            String nombre = inputNombre.getText();
+            String dni = inputDni.getText();
+            String telefono = inputTelefono.getText();
+
+            if (nombre.isEmpty()) {
+                throw new IllegalArgumentException("El nombre es un campo obligatorio");
+            }
+            if (dni.isEmpty()) {
+                throw new IllegalArgumentException("El DNI es un campo obligatorio");
+            }
+
+            if (telefono.isEmpty()) {
+                throw new IllegalArgumentException("El telefono es un campo obligatorio");
+            }
+
+            Cliente nuevoCliente = new Cliente();
+            nuevoCliente.setNombre(nombre);
+            nuevoCliente.setDni(dni);
+            nuevoCliente.setTelefono(telefono);
+
+            Cliente clienteGuardado = clienteController.crearCliente(nuevoCliente);
+            JOptionPane.showMessageDialog(this, "Cliente guardado con ID: " + clienteGuardado.getId(), "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+            LimpiarInputs();
+            panelListarCliente.recargarDatos();
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validacion", JOptionPane.WARNING_MESSAGE);
+
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar: " + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_botonGuardarClienteActionPerformed
+
+    private void LimpiarInputs() {
+        inputNombre.setText("");
+        inputDni.setText("");
+        inputDni.setValue(null);
+        inputTelefono.setText("");
+        inputTelefono.setValue(null);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JButton botonGuardarCliente;
     private javax.swing.JLabel clienteSiluetaImg;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JFormattedTextField inputDni;
+    private javax.swing.JTextField inputNombre;
+    private javax.swing.JFormattedTextField inputTelefono;
     private javax.swing.JLabel labelTelefono;
     private javax.swing.JLabel lblDni;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlAgregarCliente;
-    private javax.swing.JSeparator separatorDni;
-    private javax.swing.JSeparator separatorNombre;
-    private javax.swing.JSeparator separatorTelefono;
     // End of variables declaration//GEN-END:variables
+
 }

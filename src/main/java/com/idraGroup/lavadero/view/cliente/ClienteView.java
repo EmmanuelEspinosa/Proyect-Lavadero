@@ -4,24 +4,31 @@
  */
 package com.idraGroup.lavadero.view.cliente;
 
+import com.idraGroup.lavadero.controller.ClienteController;
+
 /**
  *
  * @author LoloColombo
  */
 public class ClienteView extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ClienteView
-     */
-    public ClienteView() {
+
+    private final ClienteController clienteController;
+    private final PanelListarCliente panelListarCliente;
+    public ClienteView(ClienteController clienteController) {
         initComponents();
-        PanelAgregarCliente panelAgregarCliente = new PanelAgregarCliente();
+        this.clienteController = clienteController;
+        this.panelListarCliente = new PanelListarCliente(clienteController);
+        
+        PanelAgregarCliente panelAgregarCliente = new PanelAgregarCliente(clienteController, panelListarCliente);
         tabbedPaneCliente.addTab("CREAR",panelAgregarCliente);
-        PanelActualizarCliente panelActualizarCliente = new PanelActualizarCliente();
+        
+        PanelActualizarCliente panelActualizarCliente = new PanelActualizarCliente(clienteController, panelListarCliente);
         tabbedPaneCliente.addTab("ACTUALIZAR",panelActualizarCliente);
-        PanelEliminarCliente panelEliminarCliente = new PanelEliminarCliente();
+        
+        PanelEliminarCliente panelEliminarCliente = new PanelEliminarCliente(clienteController, panelListarCliente);
         tabbedPaneCliente.addTab("ELIMINAR",panelEliminarCliente);
-        PanelListarCliente panelListarCliente = new PanelListarCliente();
+        
         tabbedPaneCliente.addTab("LISTAR",panelListarCliente);
     }
 

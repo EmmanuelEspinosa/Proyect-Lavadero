@@ -5,7 +5,9 @@ import java.util.Objects;
 
 public class Reserva {
 
-    private int id;
+    private Integer id;
+    private Integer clienteId;
+    private Integer autoId;
     private Cliente cliente;
     private Auto auto;
     private LocalDateTime turno;
@@ -17,7 +19,7 @@ public class Reserva {
     }
 
     // Constructor completo
-    public Reserva(int id, Cliente cliente, Auto auto, LocalDateTime turno, String tipoLavado, double precio) {
+    public Reserva(Integer id, Cliente cliente, Auto auto, LocalDateTime turno, String tipoLavado, double precio) {
         this.id = id;
         this.cliente = cliente;
         this.auto = auto;
@@ -27,12 +29,28 @@ public class Reserva {
     }
 
     // --- Getters y Setters ---
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getClienteId() {
+        return clienteId; 
+    }
+
+    public void setClienteId(Integer id) {
+        this.clienteId = id; 
+    }
+
+    public Integer getAutoId() {
+        return autoId; 
+    }
+
+    public void setAutoId(Integer id) {
+        this.autoId = id; 
     }
 
     public Cliente getCliente() {
@@ -74,9 +92,8 @@ public class Reserva {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    
+
     //METODOS
-    
     @Override
     public boolean equals(Object o) {
         if (this == o) {

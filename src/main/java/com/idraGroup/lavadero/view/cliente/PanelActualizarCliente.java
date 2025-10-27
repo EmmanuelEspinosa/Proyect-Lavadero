@@ -4,16 +4,24 @@
  */
 package com.idraGroup.lavadero.view.cliente;
 
+import com.idraGroup.lavadero.controller.ClienteController;
+import com.idraGroup.lavadero.model.Cliente;
+import java.util.Optional;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
  */
 public class PanelActualizarCliente extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelActualizarCliente
-     */
-    public PanelActualizarCliente() {
+    private final ClienteController clienteController;
+    private final PanelListarCliente panelListarCliente;
+    private Cliente clienteEnEdicion;
+
+    public PanelActualizarCliente(ClienteController clienteController, PanelListarCliente panelListarCliente) {
+        this.clienteController = clienteController;
+        this.panelListarCliente = panelListarCliente;
         initComponents();
     }
 
@@ -32,18 +40,14 @@ public class PanelActualizarCliente extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblDniActual = new javax.swing.JLabel();
-        separatorNombre = new javax.swing.JSeparator();
         lblNuevoNombre = new javax.swing.JLabel();
-        separatorDni = new javax.swing.JSeparator();
         lblNuevoTelefono = new javax.swing.JLabel();
-        separatorDniActual = new javax.swing.JSeparator();
         botonActualizarCliente = new javax.swing.JButton();
         lblNuevoDni = new javax.swing.JLabel();
-        separatorTelefono = new javax.swing.JSeparator();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
-        jFormattedTextField5 = new javax.swing.JFormattedTextField();
-        jTextField1 = new javax.swing.JTextField();
+        inputNuevoDni = new javax.swing.JFormattedTextField();
+        inputNuevoTelefono = new javax.swing.JFormattedTextField();
+        inputDniActual = new javax.swing.JFormattedTextField();
+        inputNuevoNombre = new javax.swing.JTextField();
 
         pnlActualizarCliente.setBackground(new java.awt.Color(255, 255, 255));
         pnlActualizarCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,58 +70,51 @@ public class PanelActualizarCliente extends javax.swing.JPanel {
         lblDniActual.setText("DNI ACTUAL");
         pnlActualizarCliente.add(lblDniActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        separatorNombre.setForeground(new java.awt.Color(0, 0, 0));
-        pnlActualizarCliente.add(separatorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, 10));
-
         lblNuevoNombre.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblNuevoNombre.setText("NUEVO NOMBRE");
         pnlActualizarCliente.add(lblNuevoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        separatorDni.setForeground(new java.awt.Color(0, 0, 0));
-        pnlActualizarCliente.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 10));
-
         lblNuevoTelefono.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblNuevoTelefono.setText("NUEVO TELEFONO");
         pnlActualizarCliente.add(lblNuevoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
-
-        separatorDniActual.setForeground(new java.awt.Color(0, 0, 0));
-        pnlActualizarCliente.add(separatorDniActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 340, 10));
 
         botonActualizarCliente.setBackground(new java.awt.Color(0, 134, 190));
         botonActualizarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonActualizarCliente.setForeground(new java.awt.Color(255, 255, 255));
         botonActualizarCliente.setText("Guardar");
         botonActualizarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonActualizarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarClienteActionPerformed(evt);
+            }
+        });
         pnlActualizarCliente.add(botonActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         lblNuevoDni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblNuevoDni.setText("NUEVO DNI");
         pnlActualizarCliente.add(lblNuevoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        separatorTelefono.setForeground(new java.awt.Color(0, 0, 0));
-        pnlActualizarCliente.add(separatorTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 340, 10));
-
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+            inputNuevoDni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlActualizarCliente.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
+        pnlActualizarCliente.add(inputNuevoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 340, -1));
 
         try {
-            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
+            inputNuevoTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlActualizarCliente.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 340, -1));
+        pnlActualizarCliente.add(inputNuevoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 340, -1));
 
         try {
-            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+            inputDniActual.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlActualizarCliente.add(jFormattedTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 340, -1));
-        pnlActualizarCliente.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 340, -1));
+        pnlActualizarCliente.add(inputDniActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 340, -1));
+        pnlActualizarCliente.add(inputNuevoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -131,25 +128,84 @@ public class PanelActualizarCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonActualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarClienteActionPerformed
+        try {
+            String dniABuscar = inputDniActual.getText().trim();
+
+            String nuevoNombre = inputNuevoNombre.getText().trim();
+            String nuevoDni = inputNuevoDni.getText().trim();
+            String nuevoTelefono = inputNuevoTelefono.getText().trim();
+
+            if (dniABuscar.isEmpty()) {
+                throw new IllegalArgumentException("Ingrese el DNI ACTUAL del cliente que desea modificar.");
+            }
+            if (nuevoDni.isEmpty()) {
+                throw new IllegalArgumentException("El nuevo DNI no puede estar vacío.");
+            }
+            if (nuevoNombre.isEmpty()) {
+                throw new IllegalArgumentException("El nuevo nombre no puede estar vacío.");
+            }
+            if (nuevoTelefono.isEmpty()) {
+                throw new IllegalArgumentException("El nuevo telefono no puede estar vacío.");
+            }
+
+            Optional<Cliente> resultado = clienteController.buscarPorDni(dniABuscar);
+
+            if (resultado.isPresent()) {
+                this.clienteEnEdicion = resultado.get();
+
+                this.clienteEnEdicion.setNombre(nuevoNombre);
+                this.clienteEnEdicion.setDni(nuevoDni);
+                this.clienteEnEdicion.setTelefono(nuevoTelefono);
+
+                clienteController.actualizarCliente(this.clienteEnEdicion);
+
+                JOptionPane.showMessageDialog(this, "Cliente (DNI: " + dniABuscar + ") actualizado a " + nuevoDni + " exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                LimpiarInputs();
+
+                panelListarCliente.recargarDatos();
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No se encontró un cliente con el Dni: " + dniABuscar + ". No se realizó la actualización.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                LimpiarInputs();
+            }
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validación", JOptionPane.WARNING_MESSAGE);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar: DNI duplicado o error de DB. " + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_botonActualizarClienteActionPerformed
+
+    private void LimpiarInputs() {
+        inputDniActual.setText("");
+        inputDniActual.setValue(null);
+        inputNuevoDni.setText("");
+        inputNuevoDni.setValue(null);
+        inputNuevoTelefono.setText("");
+        inputNuevoTelefono.setValue(null);
+        inputNuevoNombre.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JButton botonActualizarCliente;
     private javax.swing.JLabel clienteSiluetaImg;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFormattedTextField jFormattedTextField5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JFormattedTextField inputDniActual;
+    private javax.swing.JFormattedTextField inputNuevoDni;
+    private javax.swing.JTextField inputNuevoNombre;
+    private javax.swing.JFormattedTextField inputNuevoTelefono;
     private javax.swing.JLabel lblDniActual;
     private javax.swing.JLabel lblNuevoDni;
     private javax.swing.JLabel lblNuevoNombre;
     private javax.swing.JLabel lblNuevoTelefono;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlActualizarCliente;
-    private javax.swing.JSeparator separatorDni;
-    private javax.swing.JSeparator separatorDniActual;
-    private javax.swing.JSeparator separatorNombre;
-    private javax.swing.JSeparator separatorTelefono;
     // End of variables declaration//GEN-END:variables
+
 }

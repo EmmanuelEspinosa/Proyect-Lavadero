@@ -4,6 +4,10 @@
  */
 package com.idraGroup.lavadero.view.Auto;
 
+import com.idraGroup.lavadero.controller.AutoController;
+import com.idraGroup.lavadero.model.Auto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
@@ -13,7 +17,12 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
     /**
      * Creates new form PanelAgregarAuto
      */
-    public PanelAgregarAuto() {
+    private final AutoController autoController;
+    private final PanelListarAuto panelListar;
+
+    public PanelAgregarAuto(AutoController controller, PanelListarAuto panelListar) {
+        this.autoController = controller;
+        this.panelListar = panelListar;
         initComponents();
         ConfigurarGrupoBotones();
     }
@@ -34,14 +43,13 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblTipoAuto = new javax.swing.JLabel();
-        separatorPatente = new javax.swing.JSeparator();
         lblPatente = new javax.swing.JLabel();
         botonGuardarAuto = new javax.swing.JButton();
         bCamioneta = new javax.swing.JRadioButton();
         bSedan = new javax.swing.JRadioButton();
         bSUV = new javax.swing.JRadioButton();
         bFurgoneta = new javax.swing.JRadioButton();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        inputPatente = new javax.swing.JFormattedTextField();
 
         pnlCrearAuto.setBackground(new java.awt.Color(255, 255, 255));
         pnlCrearAuto.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,9 +72,6 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         lblTipoAuto.setText("TIPO");
         pnlCrearAuto.add(lblTipoAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        separatorPatente.setForeground(new java.awt.Color(0, 0, 0));
-        pnlCrearAuto.add(separatorPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, -1));
-
         lblPatente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         lblPatente.setText("PATENTE");
         pnlCrearAuto.add(lblPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
@@ -76,6 +81,11 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         botonGuardarAuto.setForeground(new java.awt.Color(255, 255, 255));
         botonGuardarAuto.setText("Guardar");
         botonGuardarAuto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonGuardarAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarAutoActionPerformed(evt);
+            }
+        });
         pnlCrearAuto.add(botonGuardarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         bCamioneta.setText("Camioneta");
@@ -101,11 +111,11 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         pnlCrearAuto.add(bFurgoneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         try {
-            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
+            inputPatente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU###UU")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlCrearAuto.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
+        pnlCrearAuto.add(inputPatente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -129,14 +139,67 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_bFurgonetaActionPerformed
 
-    private void ConfigurarGrupoBotones(){
-        
+    private void botonGuardarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarAutoActionPerformed
+        try {
+            String patente = inputPatente.getText();
+            String tipo = obtenerTipoSeleccionado();
+            
+            if (patente.isEmpty()) {
+                throw new IllegalArgumentException("La patente es un campo obligatorio");
+            }
+            if (tipo.isEmpty()) {
+                throw new IllegalArgumentException("Debe seleccionar un tipo de auto");
+            }
+
+            Auto nuevoAuto = new Auto();
+            nuevoAuto.setPatente(patente);
+            nuevoAuto.setTipo(tipo);
+
+            Auto autoGuardado = autoController.guardarAuto(nuevoAuto);
+            JOptionPane.showMessageDialog(this, "Auto guardado con ID: " + autoGuardado.getId(), "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+            LimpiarInputs();
+            panelListar.recargarDatos();
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validacion", JOptionPane.WARNING_MESSAGE);
+
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar: " + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_botonGuardarAutoActionPerformed
+
+    private void LimpiarInputs() {
+        inputPatente.setText("");
+        inputPatente.setValue(null);
+        GroupTipoAuto.clearSelection();
+    }
+
+    private String obtenerTipoSeleccionado() {
+        if (bCamioneta.isSelected()) {
+            return "Camioneta";
+        }
+        if (bSedan.isSelected()) {
+            return "Sedan";
+        }
+        if (bSUV.isSelected()) {
+            return "SUV";
+        }
+        if (bFurgoneta.isSelected()) {
+            return "Furgoneta";
+        }
+        return "";
+    }
+
+    private void ConfigurarGrupoBotones() {
+
         GroupTipoAuto.add(bCamioneta);
         GroupTipoAuto.add(bSedan);
         GroupTipoAuto.add(bSUV);
         GroupTipoAuto.add(bFurgoneta);
 
-}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
@@ -148,11 +211,10 @@ public class PanelAgregarAuto extends javax.swing.JPanel {
     private javax.swing.JRadioButton bSUV;
     private javax.swing.JRadioButton bSedan;
     private javax.swing.JButton botonGuardarAuto;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField inputPatente;
     private javax.swing.JLabel lblPatente;
     private javax.swing.JLabel lblTipoAuto;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlCrearAuto;
-    private javax.swing.JSeparator separatorPatente;
     // End of variables declaration//GEN-END:variables
 }

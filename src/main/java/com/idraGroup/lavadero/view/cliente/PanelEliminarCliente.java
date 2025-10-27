@@ -4,16 +4,23 @@
  */
 package com.idraGroup.lavadero.view.cliente;
 
+import com.idraGroup.lavadero.controller.ClienteController;
+import com.idraGroup.lavadero.model.Cliente;
+import java.util.Optional;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LoloColombo
  */
 public class PanelEliminarCliente extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelEliminarCliente
-     */
-    public PanelEliminarCliente() {
+    private final ClienteController clienteController;
+    private final PanelListarCliente panelListarCliente;
+
+    public PanelEliminarCliente(ClienteController clienteController, PanelListarCliente panelListarCliente) {
+        this.clienteController = clienteController;
+        this.panelListarCliente = panelListarCliente;
         initComponents();
     }
 
@@ -32,9 +39,8 @@ public class PanelEliminarCliente extends javax.swing.JPanel {
         LogoImg = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblDniEliminar = new javax.swing.JLabel();
-        separatorDni = new javax.swing.JSeparator();
         botonEliminarCliente = new javax.swing.JButton();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        inputDniEliminar = new javax.swing.JFormattedTextField();
 
         pnlEliminarCliente.setBackground(new java.awt.Color(255, 255, 255));
         pnlEliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,22 +63,24 @@ public class PanelEliminarCliente extends javax.swing.JPanel {
         lblDniEliminar.setText("DNI");
         pnlEliminarCliente.add(lblDniEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        separatorDni.setForeground(new java.awt.Color(0, 0, 0));
-        pnlEliminarCliente.add(separatorDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, -1));
-
         botonEliminarCliente.setBackground(new java.awt.Color(153, 0, 0));
         botonEliminarCliente.setFont(new java.awt.Font("Roboto Condensed Black", 0, 18)); // NOI18N
         botonEliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarCliente.setText("Eliminar");
         botonEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarClienteActionPerformed(evt);
+            }
+        });
         pnlEliminarCliente.add(botonEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 40));
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+            inputDniEliminar.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnlEliminarCliente.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, -1));
+        pnlEliminarCliente.add(inputDniEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 340, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -88,16 +96,68 @@ public class PanelEliminarCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarClienteActionPerformed
+        try {
+            String dniAEliminar = inputDniEliminar.getText().trim();
+            if (dniAEliminar.isEmpty()) {
+                throw new IllegalArgumentException("Ingrese el DNI del cliente que desea eliminar.");
+            }
+
+            Optional<Cliente> resultado = clienteController.buscarPorDni(dniAEliminar);
+
+            if (resultado.isPresent()) {
+                Cliente clienteEliminar = resultado.get();
+
+                int confirmacion = JOptionPane.showConfirmDialog(this,
+                        "¿Está seguro de eliminar el cliente con el DNI: " + dniAEliminar + "? Esta acción es irreversible.",
+                        "Confirmar Eliminación",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmacion == JOptionPane.YES_OPTION) {
+
+                    clienteController.eliminarCliente(clienteEliminar.getId());
+
+                    JOptionPane.showMessageDialog(this,
+                            "Cliente (DNI: " + dniAEliminar + ") eliminado exitosamente.",
+                            "Éxito",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    LimpiarInputs();
+                    panelListarCliente.recargarDatos();
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Eliminación cancelada.", "Cancelado", JOptionPane.INFORMATION_MESSAGE);
+                    LimpiarInputs();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "No se encontró un cliente con el DNI: " + dniAEliminar + ". No se elimino.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                        LimpiarInputs();
+            }
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Validación", JOptionPane.WARNING_MESSAGE);
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(this, "Error al eliminar el cliente" + e.getMessage(), "Error de persistencia", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_botonEliminarClienteActionPerformed
+
+    private void LimpiarInputs() {
+        inputDniEliminar.setText("");
+        inputDniEliminar.setValue(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CiudadImg;
     private javax.swing.JLabel LogoImg;
     private javax.swing.JButton botonEliminarCliente;
     private javax.swing.JLabel clienteSiluetaImg;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField inputDniEliminar;
     private javax.swing.JLabel lblDniEliminar;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlEliminarCliente;
-    private javax.swing.JSeparator separatorDni;
     // End of variables declaration//GEN-END:variables
 }

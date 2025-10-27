@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Cliente {
 
-    private int id;
+    private Integer id;
     private String nombre;
     private String dni;
     private String telefono;
@@ -14,7 +14,7 @@ public class Cliente {
     }
 
     // Constructor completo
-    public Cliente(int id, String nombre, String dni, String telefono) {
+    public Cliente(Integer id, String nombre, String dni, String telefono) {
         this.id = id;
         this.nombre = nombre;
         this.dni = dni;
@@ -22,11 +22,11 @@ public class Cliente {
     }
 
     // --- Getters y Setters ---
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
