@@ -44,6 +44,15 @@ INSERT INTO CLIENTES (nombre, dni, telefono) VALUES
 ('Iñaqui', '45632124', '223621264');
 
 INSERT INTO AUTOS (patente, tipo) VALUES
-('A1B234', 'Sedán'),
-('C5D678', 'Camioneta'),
-('B1A432', 'Sedán');
+('AB123AS', 'Sedán'),
+('BA321SA', 'Camioneta'),
+('CA456AC', 'Sedán');
+
+INSERT INTO RESERVAS (id_cliente, id_auto, turno, tipo_lavado, precio) VALUES
+(
+    1,                                 
+    1,                                 
+    '2025-10-28 10:00:00',             
+    'STANDARD',                      
+    1000.00                            
+);
