@@ -11,7 +11,7 @@ import java.sql.*;
 public class dbConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/reservas_lavadero";
     private static final String USER = "root";
-    private static final String PASSWORD = "72517";
+    private static final String PASSWORD = "ingreseContraseña";
 /**
  * conectar.
 
